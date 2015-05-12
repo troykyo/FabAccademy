@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /rnetusers/
+Disallow: /rnet20/
+Disallow: /Myroland/
+Disallow: /Labels/
+Disallow: /Tools/
+
+Disallow: /owners/dentalupgrade/
+
+Disallow: /products/dental/dwx4w/
+
+
+User-agent: googlebot
+Disallow: *.csi
+sitemap: http://www.rolanddga.com/sitemap.xml

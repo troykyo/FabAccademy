@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>hell-o-radio</title><meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body><h1>hello_radio_016</h1><span style="font-style: italic;"></span><img style="width: 600px; height: 448px;" src="http://fab.cba.mit.edu/content/projects/comm/hello_radio/doc/hello_radio_016_SED.jpg" alt="hello_radio_016_SED.jpg"><br><span style="font-style: italic;">hello_radio_016 assembled by Shelby Doyle</span><br>
+<br>
+<h3>Board fabrication by milling</h3>
+This board requires a ground plane underneath the circuitry to define 
+the impedance of the microstripline traces coming out of the MRF49XA.&nbsp; The preferred route is to mill the board out of a double-sided PCB 
+blank.&nbsp; Alternatively, the top traces could be milled from a single-sided PCB blank with a strip of adhesive copper foil on the back 
+to define the ground plane.&nbsp; In either case, at least one connection should be made between the top and bottom ground planes, preferably at 
+the left edge of the board. <br>
+&nbsp;<br>
+For the top traces, use an 1/64" end mill with a diameter setting of 0.38
+mm to ensure the toolpath is generated for all cutouts and isolations<br>
+<span style="font-weight: bold;">$</span> <span style="font-weight: bold;">png_path hello_radio_016-top.png hello-radio_016-top.path 1 0.38 4 0.5 0.5 </span># in out error diameter contours offset-overlap intensity<br>
+<br>
+hello_radio_016-top.png @ 2400 dpi<br>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/hw/hello_radio_016/fab_mod/hello_radio_016-top.png"><img style="width: 50%; height: 50%;" src="http://fab.cba.mit.edu/content/projects/comm/hello_radio/hw/hello_radio_016/fab_mod/hello_radio_016-top.png" alt="hello_radio_016-top.png"></a><br>
+<br>
+<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Liberation Serif'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;"></span>For
+the via drils and board cutout, use a 1/32" end mill with a diameter setting of 0.79 mm<br>
+<span style="font-weight: bold;">$</span> <span style="font-weight: bold;">png_path hello_radio_016-top.png hello-radio_016-top.path 1 0.79 4 0.5 0.5 </span># in out error diameter contours offset-overlap intensity<br>
+<br>
+hello_radio_016-cutout.png @ 2400 dpi<br>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/hw/hello_radio_016/fab_mod/hello_radio_016-cutout.png"><img style="width: 50%; height: 50%;" alt="hello_radio_016-cutout.png" src="http://fab.cba.mit.edu/content/projects/comm/hello_radio/hw/hello_radio_016/fab_mod/hello_radio_016-cutout.png"></a><br>
+<br>
+
+<h3>Board artwork for milling<br></h3>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/hw/hello_radio_016/fab_mod/hello_radio_016-top.png">hello_radio_016-top.png</a> (Top layer image)<br><a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/hw/hello_radio_016/fab_mod/hello_radio_016-cutout.png">hello_radio_016-cutout.png</a> (Cutout image)<br><br>
+
+<h3>Schematics, board layout, assembly diagram, BOM<br></h3>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/doc/hello_radio_016-sch.pdf">hello_radio_016-sch.pdf</a> (Schematic)<br><a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/doc/hello_radio_016-brd.pdf">hello_radio_016-brd.pdf</a> (Board layout)<br><a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/doc/hello_radio_016-assembly.pdf">hello_radio_016-assembly.pdf</a> (Assembly diagram)<br><a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/doc/hello_radio_016-bom.txt">hello_radio_016-bom.txt</a> (Bill of Materials)<br><br>
+
+<h3>Object code, source code, boot loader, makefile</h3>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/fw/hello_radio_8MHz.hex">hello_radio_8MHz.hex</a><br>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/fw/hello_radio_20MHz.hex">hello_radio_20MHz.hex</a><br>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/fw/hello_radio.c">hello_radio.c</a><br>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/fw/hal_hello_radio-016.h">hal_hello_radio-016.h</a><br>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/fw/bootloaders/atmega/ATmegaBOOT_168_pro_8MHz.hex">ATmegaBOOT_168_pro_8MHz.hex</a><br>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/fw/makefile">makefile</a><br>
+<br>
+
+<h3>Eagle design files</h3>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/hw/hello_radio_016/hello_radio_016.sch">hello_radio_016.sch</a><br>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/hw/hello_radio_016/hello_radio_016.brd">hello_radio_016.brd</a><br>
+<a href="http://fab.cba.mit.edu/content/projects/comm/hello_radio/hw/hello_radio_016/hello_radio_016.lbr">hello_radio_016.lbr</a><br><br>
+
+<h3>Antenna options</h3>
+Instead of an SMA connector and antenna, a length of wire can be 
+soldered directly to the center pad of the SMA connector 
+footprint.&nbsp; The wavelength of an 868 MHz carrier is about 34.5 cm, 
+so use at least 1/4 of this wavelength (8.6 cm).<br>
+<br>
+
+<h3>Serial interface and protocol</h3>
+[to be added]<br>
+<br>
+<h3>Fuse settings</h3>
+<div style="margin-left: 40px;"><code>
+avrdude -U lfuse:w:0xf6:m -U hfuse:w:0xdd:m -U efuse:w:0x01:m -U flash:w:hello_radio_20MHz.hex -p m168 -P /dev/ttyACM0 -c stk500v2
+</code></div>
+<br>
+<br>
+<br><span style="font-style: italic;">Brian Mayton, David Cranor, Rehmi Post
+</span><br><span style="font-style: italic;"></span>  
+</body></html>

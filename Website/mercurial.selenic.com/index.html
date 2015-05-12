@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="http://mercurial.selenic.com/css/styles.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="http://mercurial.selenic.com/js/common.js"></script>
+        <script type="text/javascript" src="http://mercurial.selenic.com/sources.js"></script>
+        <script type="text/javascript" src="http://mercurial.selenic.com/js/download.js"></script>
+        <script language="javascript">
+          Downloader.init(sources);
+          var dl = Downloader.select();
+        </script>
+        <link rel="shortcut icon" type="image/x-icon" href="http://mercurial.selenic.com/images/favicon.ico">
+
+        <title>Mercurial SCM</title>
+    </head>
+    <body id="home">
+        <h1 id="logo"><a href="index.html">mercurial</a></h1>
+            
+        <ul id="nav">
+            <li><a href="http://mercurial.selenic.com/about">about</a></li>
+            <li><a href="http://mercurial.selenic.com/guide">guide</a></li>
+            <li><a href="http://mercurial.selenic.com/downloads">download</a></li>
+            <li><a href="http://mercurial.selenic.com/wiki/UsingExtensions">extensions</a></li>
+            <li><a href="http://mercurial.selenic.com/wiki/">news/wiki</a></li>
+        </ul>
+        
+        <form id="search" method="get" action="http://mercurial.selenic.com/wiki/Mercurial">
+        <input type="hidden" name="action" value="fullsearch">
+        <input type="hidden" name="context" value="180">
+            <fieldset>
+                <legend>Search form</legend>
+                <label for="keyword">keyword</label>
+                <input class="text" type="text" name="value"
+                value="Search the Wiki" id="keyword" onclick="resetBar();">
+                <input class="submit" type="submit" value="Title"
+                name="titlesearch" alt="Search Titles"> 
+            </fieldset>
+        </form>
+        
+        <div id="content">
+            
+
+<div class="row">
+    <div class="col big">
+        <h1>Work easier <br> Work faster</h1>
+        <h2>Mercurial is a free, distributed source control management tool. It efficiently handles projects of any size and offers an easy and intuitive interface.</h2>
+    </div>
+    <div class="col">                   
+        
+         
+                        <a class="download" href="http://mercurial.selenic.com/downloads" onClick="return dl.download();">
+                                    <strong>Download now</strong>
+                                    Mercurial <em><script language="Javascript">dl.write('version');</script></em>
+                                    <span><script language="javascript">dl.write('desc');</script></span>
+                        </a>
+                        <dl>
+                            <dt>Another OS?<br><em>Get Mercurial for:</em></dt>
+                            <dd><a href="http://mercurial.selenic.com/downloads">Mac OS X</a></dd>
+                            <dd><a href="http://mercurial.selenic.com/downloads">Windows</a></dd>
+                            <dd><a href="http://mercurial.selenic.com/downloads">other</a></dd>
+                        </dl>
+                        
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col big">
+        <h3>How you can benefit from Mercurial</h3>
+        <ol>
+        <!-- The three sections should now grow more compact as you go down, with power and speed the longest and just works only two simple, clean sentences. -->
+            <li class="i-1">
+                It is <a href="http://mercurial.selenic.com/about">fast and powerful</a>
+                <p>Mercurial efficiently handles <a href="http://mercurial.selenic.com/who">projects of any size and kind</a><!--Reference: http://mercurial.selenic.com/wiki/ProjectsUsingMercurial -->. Every clone contains the whole project history, so most actions are local, fast and convenient. Mercurial supports a multitude of <a href="http://mercurial.selenic.com/wiki/WorkingPractices">workflows</a> and you can easily enhance its functionality with <a href="http://mercurial.selenic.com/wiki/UsingExtensions">extensions</a>.</p>
+            </li>
+            <li class="i-2">
+                It is <a href="http://mercurial.selenic.com/learn">easy to learn</a><!-- point to a site which begins with a random "easy to learn" testimonial and then shows ways to learn Mercurial, from quick start to indepth -->
+                <p>You can follow our simple <a href="http://mercurial.selenic.com/guide">guide</a> to learn how to revision your documents with Mercurial, or just use the <a href="http://mercurial.selenic.com/quickstart">quick start</a> to get going instantly. A short overview of Mercurial's decentralized model is also <a href="http://mercurial.selenic.com/wiki/UnderstandingMercurial">available</a>.<!--If you already know Subversion, please see <a href="mercurial_for_svn_users">Mercurial for svn users</a>.--></p>
+            </li>
+            <li class="i-3">
+                And it just works
+                <!--<p><em>Random quote about usability.</em></p>-->
+                <p>Mercurial strives to deliver on each of its promises. Most tasks simply work on the first try and without requiring arcane knowledge. <!--(If one doesn't, that's most likely no feature but a <a href="http://selenic.com/mercurial/bugs/">bug</a>. Please <a href="http://selenic.com/mercurial/bugs/">tell us about it</a>!) 
+                commented out because it feels awkward.--></p>
+            </li>
+        </ol>
+    </div>
+    <div class="col">
+        <h3>Quick Start</h3>
+
+        <p><em>Clone a project and push changes</em>
+<pre>$ hg clone http://selenic.com/repo/hello
+$ cd hello
+$ (edit files)
+$ hg add (new files)
+$ hg commit -m 'My changes'
+$ hg push
+
+</pre>
+</p>
+
+<p><em>Create a project and commit</em>
+<pre>$ hg init (project-directory)
+$ cd (project-directory)
+$ (add some files)
+$ hg add
+$ hg commit -m 'Initial commit'
+</pre>
+</p>
+    <!--Change into project dir before initiating repo to avoid a possible stumbling point.-->
+    </div>
+</div>
+
+
+        </div>
+        
+        <div id="footer">
+            <a href="https://plus.google.com/112477627281544607334"
+                rel="publisher">G+</a> /
+            design by <a href="http://www.designpunct.ro">punct</a> /
+            design courtesy of <a href="http://www.bitbucket.org/">bitbucket</a> /
+            licensed under <a href="http://www.gnu.org/licenses/gpl-2.0.txt">GPLv2</a> /
+            <a href="http://mercurial.selenic.com/thepage">about this page</a>
+        </div>
+        
+    </body>
+</html>

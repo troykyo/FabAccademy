@@ -1,0 +1,113 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		
+		<style  type="text/css">body 	{
+		font-family: Helvetica;
+		text-align: center;
+		}
+
+#container {
+		margin-left: auto;
+		margin-right: auto;
+		width: 600px;
+		text-align: left;
+		}
+p 		{
+		font-size:11px;
+		font-family: Helvetica;
+		color: black;
+		line-height:15px;
+		margin-top: 8px;
+		margin-right:30px
+		}
+
+a 		{
+		font-size:11px;
+		font-family: Helvetica;
+		color: blue;
+		text-decoration: none;
+		line-height:15px;
+		margin-top: 8px;
+		margin-right:30px
+		}
+
+h1 		{
+		
+		color: gray;
+
+		}
+		
+img		{
+		margin-top: 20px;
+		max-width: 600px;	
+}
+iframe		{
+		margin-top: 20px;
+		}
+		
+.sub	{
+		border-left: 1px solid black;
+		padding-left: 10px;>
+		}
+ 
+	
+</style>
+
+
+</head>
+<body>
+<div id="container">
+<div class="sub">
+<p><b>Using the FAB-Lab for BGA PCB Protyping</b></p>
+<p> Many components come only in BGA packages. <br>
+Using the modella and a 1/100in end-mill it is possible to create functional boards with traces of less than 4mil width. 
+<br><br>
+BGA PCB milling using the Fab-workflow:<br>
+<br>
+- Is possible<br>
+- Needs the 1/100in mill<br>
+- requires every even bed<br>
+- very fine traces<br>
+- export at 2000dpi<br>
+- set Error smaller 1 <br>
+- for reflow using the oven a extra thermometer in very helpful<br>
+</p>
+</div>
+<div class="sub">
+
+<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/board.png"></img>
+<p>PCB layout with 10mil spacing and 2 mill tracewidth</p>
+<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/0.png"></img>
+<p>Milling on the Modella: feed speed 1.5mm per second</p>
+<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/via.png"></img>
+<p>Connecting the Vias after deburring with sandpaper. The traces are quite robust </p>
+<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/2.png"></img>
+<p>BGA package and PCB</p>
+<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/1.png"></img>
+<p>mounted chip, with shorting bridges</p>
+</div>
+<div class="sub">
+<h1>FAB soldermask</h1>
+<p>My first tries did not yield good results, because the solderballs would bridge the pads. I assuemed this was beacause of the escape routes. The fab-process made pcbs lack the soldermask. Soldermask is a thin layer of epoxi-resin that is applied ontop of the copper, covering and isolating all traces that do not need to be exposed.<p>
+Most PCB layout programs create a soldermask for you. It would be very nice to be able to fabricate pcbs with some kind of soldermask using the fab process. <br>
+The idea was to first mill out the traces, then with the board still in place, applie a piece of capton tape and mill a second program that would clear the pads of the capton tape. To genereate pngs that contain the soldermask, all that was needed was to adapt the eagle makefile to export this layer to a png. The mill is zeroed on the bare copper and the prgram run with 0 z-depth. <br>
+<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/pre_soldermask.png"><br>
+<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/solder_mask.png"> <br>
+The problem that arose and finally let to termination of this stream of inquiry was that the mill head is not very good a plunging. The capton tape was sometimes not cut as the stiffness of the machine was insufficiant. Increasing the pressure on the worktool to allow penetration by setting the cutdepth slighly deeper resulted is reliable cutting of the kapton tape but also milled the copper at some places, effectivly isolating the pad from the trace. </p>
+<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/solder_mask_fail.png">
+<p>Isolated trace from soldermask milling</p>
+</div>
+<div class="sub">
+<h1>reflow with alignment aid</h1>
+<p>The second attempt to reflow a bga component was a success. This time I created a placement frame that would position the components perfecly and hold it in place during reflow.</p>
+	<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/reflow_aid.png">
+<p>bga component held by the alignment aid and the board.</p>
+	<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/reflow.png">
+<p>reflow in convection oven</p>
+	<img src="http://fab.cba.mit.edu/classes/S62.12/people/moritz.kassner/post_reflow.png">
+<p>after reflow. the board is browned but still functional.</p>
+</div>
+
+</div>
+</html>

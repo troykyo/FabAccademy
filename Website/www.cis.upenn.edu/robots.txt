@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /_mm/
+Disallow: /_notes/
+Disallow: /_baks/
+Disallow: *.csi
+Crawl-delay: 5

@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>CVS - Open Source Version Control</title>
+
+<link rev="made" href="mailto:webmasters@www.gnu.org">
+
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SCM source control version revision history">
+<meta name="keywords" content="cvs"></head>
+
+<body alink="#ff0000" bgcolor="#ffffff" link="#1f00ff" text="#000000" vlink="#9900dd">
+
+<h2><small>CVS</small> - Concurrent Versions System</h2>
+
+<center>
+  <a href="index.html#introduction" name="TOCintroduction">Introduction</a>
+| <a href="index.html#news" name="TOCnews">News</a>
+| <a href="index.html#documentation" name="TOCdocumentation">Documentation</a>
+| <a href="index.html#downloading" name="TOCdownloading">Get the Software</a>
+| <a href="index.html#mailinglists" name="TOCmailinglists">Help and Bug Reports</a>
+| <a href="index.html#development" name="TOCdevelopment">Development</a>
+</center>
+<p>
+
+<!-- Original contributing author: Frank Warmerdam, warmerda@home.com -->
+
+</p><h3><a href="index.html#TOCintroduction" name="introduction">Introduction to <small>CVS</small></a></h3>
+<p>
+<small>CVS</small> is a version control system, an important component of
+Source Configuration Management (SCM).  
+Using it, you can record the history of sources files, and documents.  
+It fills a similar role to the free software 
+<a href="http://www.gnu.org/software/rcs/rcs.html">RCS</a>, 
+<a href="http://www.xcf.berkeley.edu/%7Ejmacd/prcs.html">PRCS</a>,
+and <a href="http://www.canb.auug.org.au/%7Emillerp/aegis.html">Aegis</a>
+packages.
+
+</p><p>
+<small>CVS</small> is a production quality system in wide use around the world, including
+many free software projects.</p><p>
+
+</p><p>
+While <small>CVS</small> stores individual file history in the same format as RCS, it
+offers the following significant advantages over RCS:
+
+</p><ul>
+
+<li> 
+
+It can run scripts which you can supply to log <small>CVS</small> operations or enforce 
+site-specific polices. 
+
+</li><li> 
+
+<strong>Client/server <small>CVS</small></strong> enables developers scattered by geography or slow
+modems to function as a single team.  The version history is stored on
+a single central server and the client machines have a copy of all the
+files that the developers are working on.  Therefore, the network
+between the client and the server must be up to perform <small>CVS</small> operations
+(such as checkins or updates) but need not be up to edit or manipulate the
+current versions of the files.  Clients can perform all the same
+operations which
+are available locally.
+
+</li><li>
+
+In cases where several developers or teams want to each maintain
+their own version of the files, because of geography and/or policy,
+<small>CVS</small>'s <strong>vendor branches</strong> can import a version from another team
+(even if they don't use <small>CVS</small>), and then <small>CVS</small> can merge the changes from
+the vendor branch with the latest files if that is what is desired.
+
+</li><li>
+
+<strong>Unreserved checkouts</strong>, allowing more than one developer to work on
+the same files at the same time.
+
+</li><li>
+
+<small>CVS</small> provides a flexible <strong>modules database</strong> that provides a symbolic
+mapping of names to components of a larger software distribution.  It
+applies names to collections of directories and files.  A single
+command can manipulate the entire collection.
+
+</li><li> 
+
+<small>CVS</small> servers run on most unix variants, and clients for Windows
+NT/95, OS/2 and VMS are also available.  <small>CVS</small> will also operate
+in what is sometimes called server mode against local repositories on Windows
+95/NT. 
+
+</li></ul>
+
+<h3><a href="index.html#TOCnews" name="news"><small>CVS</small> News</a></h3>
+
+<p>Recent CVS news, including release announcements, are posted on the
+<a href="http://ximbiot.com/cvs/wiki/index.php?title=Current_events">Current
+events page</a>.  To receive the same news via email, subscribe to the
+<a href="http://lists.nongnu.org/mailman/listinfo/cvs-announce">cvs-announce
+mailing list</a> (these announcements are duplicated on the bug-cvs@nongnu.org
+and info-cvs@nongnu.org <a href="index.html#mailinglists">mailing lists</a>).</p>
+
+<h3><a href="index.html#TOCdocumentation" name="documentation"><small>CVS</small> Documentation</a></h3>
+
+<p>The <a href="http://ximbiot.com/cvs/"><small>CVS</small> Information
+Page</a> contains detailed, and current information on <small>CVS</small>.
+
+</p><p>
+The <a href="http://ximbiot.com/cvs/manual/">manual</a> is also available
+online.
+</p>
+
+
+
+<h3><a href="index.html#TOCdownloading" name="downloading">Downloading <small>CVS</small></a></h3>
+<p>
+
+<small>CVS</small> can be downloaded from
+<a href="http://ftp.gnu.org/non-gnu/cvs">http://ftp.gnu.org/non-gnu/cvs/</a> or
+one of the <a href="http://www.gnu.org/prep/ftp.html">mirrors</a> (make sure to
+check the <strong>non-gnu/cvs</strong> directory on the mirrors).
+For other ways to obtain <small>CVS</small>, please read
+<a href="http://www.gnu.org/software/software.html#HowToGetSoftware">How to get GNU Software</a>.
+</p>
+
+
+
+<h3><a href="index.html#TOCmailinglists" name="mailinglists"><small>CVS</small> Help and Bug Reports</a></h3>
+<p>Help requests and bug reports are handled for free, on a volunteer basis,
+on the
+<a href="http://savannah.nongnu.org/mail/?group=cvs"><small>CVS</small> Mailing Lists</a>.
+</p>
+<p>
+<a href="http://ximbiot.com/cvs/wiki/index.php?title=Commercial_Support">
+Companies offering commercial support for <small>CVS</small></a> are listed in
+the <a href="http://ximbiot.com/cvs/wiki/"><small>CVS</small> Wiki</a>.
+</p>
+
+<h3><a href="index.html#TOCdevelopment" name="development"><small>CVS</small> Development</a></h3>
+<p>
+<p>You may browse the
+<a href="http://savannah.nongnu.org/cgi-bin/viewcvs/cvs/ccvs/">current
+<small>CVS</small> sources</a> on <a href="http://savannah.nongnu.org">Savannah</a>.</p>
+
+<p>You may also view the
+<a href="http://savannah.nongnu.org/projects/cvs/">project pages</a>.</p>
+
+
+
+<!-- beginning of final boilerplate ------------------------------------------>
+
+<hr>
+
+Return to <a href="http://www.gnu.org/home.html">GNU's home page</a>.
+
+<p>
+Please send FSF &amp; GNU inquiries &amp; questions to
+
+<a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+There are also <a href="http://www.gnu.org/home.html#ContactInfo">other ways to contact</a> the FSF.
+
+</p><p>
+Please send comments on these web pages to
+<a href="mailto:webmasters@www.gnu.org"><em>webmasters@www.gnu.org</em></a>
+(and <a href="mailto:bug-cvs@gnu.org"><em>bug-cvs@gnu.org</em></a> for this
+page in particular), and send other questions to
+<a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+
+</p><p>
+This page Copyright (C) 2005-2006 <a href="http://ximbiot.com/~oberon/resume.html">Derek Robert Price</a> &amp; <a href="http://ximbiot.com">Ximbiot</a> 
+and Copyright (C) 1998 Free Software Foundation, Inc.,
+59 Temple Place - Suite 330, Boston, MA  02111,  USA
+
+</p><p>
+Verbatim copying and distribution of this entire article is
+permitted in any medium, provided this notice is preserved.
+</p><p>
+Updated:
+<!-- timestamp start -->
+$Date: 2006/12/03 18:54:47 $ $Author: dprice $
+<!-- timestamp end -->
+</p><hr>
+</body></html>

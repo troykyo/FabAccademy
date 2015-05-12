@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <meta name="author" content="The Bazaar Team <bazaar@lists.canonical.com>" />
+ <meta name="copyright" content="Copyright (c) 2009-2010 Canonical Ltd" />
+ <meta name="description"
+       content="Bazaar version control system: easily manage source code on Windows, Ubuntu, GNU/Linux, and Mac OS X" />
+ <meta name="robots" content="all" />
+
+ <title>Bazaar</title>
+
+ <link rel="stylesheet" href="http://bazaar.canonical.com/960/css/reset.css" />
+ <link rel="stylesheet" href="http://bazaar.canonical.com/960/css/text.css" />
+ <link rel="stylesheet" href="http://bazaar.canonical.com/960/css/960.css" />
+ <link rel="stylesheet" href="http://bazaar.canonical.com/css/html-elements.css" />
+ <link rel="stylesheet" href="http://bazaar.canonical.com/css/regions.css" />
+
+ <link rel="shortcut icon" href="http://bazaar.canonical.com/bzricons/favicon.ico" type="image/x-icon"/>
+
+ <link rel="alternate" type="application/atom+xml" href="http://feeds.launchpad.net/bzr/announcements.atom" title="Bazaar News and Announcements" />
+
+</head>
+
+<body id="front_page">
+
+<div id="access">
+  Bazaar quick links:
+  <a id="skip-to-nav" href="index.html#nav-utility">Skip to navigation</a>,
+  <a id="skip-to-content" href="index.html#content">Skip to content</a> or
+  <a href="index.html#nav-extended">Skip to extended navigation</a>.
+</div>
+
+<div id="nav-utility">
+  <ul>
+    <li class="first"><a href="index.html">Home</a></li>
+    <li><a href="http://doc.bazaar.canonical.com/en/">Documentation</a></li>
+    <li><a href="http://wiki.bazaar.canonical.com/Download">Download</a></li>
+    <li><a href="http://wiki.bazaar.canonical.com/BzrExtras">Extras</a></li>
+    <li><a href="http://doc.bazaar.canonical.com/developers/">Contribute</a></li>
+    <li class="last"><a href="http://wiki.bazaar.canonical.com/BzrSupport">Help</a></li>
+  </ul>
+
+<!-- Google Custom Search Element -->
+<div id="cse">
+<script type="text/javascript">
+document.write('\
+  <form action="http://bazaar.canonical.com/en/search.html" id="cse-search-box">\
+    <div>\
+      <input type="hidden" name="cx" value="009852948614216791564:dr5xzrczfnu" />\
+      <input type="hidden" name="cof" value="FORID:10" />\
+      <input type="hidden" name="ie" value="UTF-8" />\
+      <input type="text" name="q" size="25" />\
+      <input type="submit" name="sa" value="Search" />\
+    </div>\
+  </form>\
+')
+</script>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
+<noscript>
+  <form action="http://www.google.com/cse" id="cse-search-box">
+    <div>
+      <input type="hidden" name="cx" value="009852948614216791564:dr5xzrczfnu" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="text" name="q" size="25" />
+      <input type="submit" name="sa" value="Search" />
+    </div>
+  </form>
+</noscript>
+</div>
+<div class="clear"></div>
+</div>
+
+<div id="banner">
+
+<div class="container_12">
+  <div id="logo" class="grid_2 alpha"><img src="http://bazaar.canonical.com/bzricons/bazaar-logo.png" alt="Bazaar logo" /></div>
+  <div class="grid_4">
+      <h1 id="page_title"><a href="index.html">Bazaar</a></h1>
+      <table>
+          <tr><th align="left">Stable version:&nbsp;</th><td>2.6.0</td></tr>
+          <tr><th align="left">Test version:&nbsp;</th><td>trunk</td></tr>
+      </table>
+  </div>
+  <div class="grid_4 omega" id="carousel">
+      <dl>
+          <dt><a href="http://doc.bazaar.canonical.com/explorer/en/"><img src="http://bazaar.canonical.com/carousel/explorer-status-on-ubuntu.png" height="140" alt="Ubuntu GUI" /></a>&nbsp;
+        <!--
+        <a href="http://doc.bazaar.canonical.com/explorer/en/visual-tour-windows.html"><img src="../carousel/dialog-diff-historical-windows.png" height="115" alt="Windows GUI" /></a>
+        <a href="http://doc.bazaar.canonical.com/explorer/en/visual-tour-macosx.html"><img src="../carousel/dialog-push-macosx.png" height="120" alt="OS X GUI" /></a>
+        -->
+        </dt><dt>
+        Take the tour on
+        <a href="http://doc.bazaar.canonical.com/explorer/en/visual-tour-gnome.html">GNOME</a>,
+        <a href="http://doc.bazaar.canonical.com/explorer/en/visual-tour-kde.html">KDE</a>,
+        <a href="http://doc.bazaar.canonical.com/explorer/en/visual-tour-windows.html">Windows</a> or
+        <a href="http://doc.bazaar.canonical.com/explorer/en/visual-tour-macosx.html">OS X</a>.
+        </dt></dl>
+  </div>
+
+</div> <!-- /banner -->
+
+<div class="clear"></div>
+
+</div>
+
+<div class="clear"></div>
+
+<div id="content">
+
+<div class="container_12">
+  <div class="grid_6 alpha">
+    <h2>What is Bazaar?</h2>
+    <p class="introduction">
+    Bazaar is a version control system that helps you track project history over time and
+    to collaborate easily with others.
+    Whether you're a single developer, a co-located team or a community of developers scattered
+    across the world, Bazaar scales and adapts to meet your needs.
+      Part of the <a href="http://www.gnu.org/">GNU Project</a>,
+      Bazaar is free software sponsored by <a href="http://canonical.com/">Canonical</a>.
+      For a closer look, see
+      <a href="http://doc.bazaar.canonical.com/migration/en/why-switch-to-bazaar.html">
+          ten reasons to <span class="bullet">switch to Bazaar.</span></a>
+    </p>
+
+  <div class="get_action grid_6">
+      <div class="grid_2 alpha"><h2><a href="http://wiki.bazaar.canonical.com/Download"><img src="http://bazaar.canonical.com/bzricons/download-16.png">&nbsp;Downloads</a></h2>
+      <p class="pretext">Bazaar runs on
+     <a href="http://wiki.bazaar.canonical.com/WindowsDownloads">Windows</a>,
+     <a href="http://wiki.bazaar.canonical.com/DistroDownloads#Ubuntu">Ubuntu</a>,
+     <a href="http://wiki.bazaar.canonical.com/DistroDownloads#Debian">Debian</a>,
+     <a href="http://wiki.bazaar.canonical.com/DistroDownloads#CentOS/RHEL">Red Hat</a>,
+     <a href="http://wiki.bazaar.canonical.com/DistroDownloads#openSUSE">SUSE</a>,
+     <!--
+     <a href="http://wiki.bazaar.canonical.com/DistroDownloads#Fedora">Fedora</a>,
+     -->
+     <a href="http://wiki.bazaar.canonical.com/MacOSXDownloads">OS X</a>,
+     <a href="http://wiki.bazaar.canonical.com/UnixDownloads#FreeBSD">FreeBSD</a>,
+     <a href="http://wiki.bazaar.canonical.com/UnixDownloads#Solaris">Solaris</a>,
+     <a href="http://wiki.bazaar.canonical.com/DistroDownloads#Genntoo">Gentoo</a>
+      and more.</p>
+  </div>
+
+  <div class="grid_2"><h2><a href="http://wiki.bazaar.canonical.com/BzrExtras"><img src="http://bazaar.canonical.com/bzricons/extras.png">&nbsp;Extras</a></h2>
+      <p class="pretext">
+     Get your team working better together with project hosting, add-ons and open APIs for custom integration needs.</p>
+  </div>
+
+  <div class="grid_2 omega"><h2><a href="http://wiki.bazaar.canonical.com/BzrSupport"><img src="http://bazaar.canonical.com/bzricons/support.png">&nbsp;Support</a></h2>
+     <p class="pretext">Our active community can be found on IRC and the project mailing list. Commercial support is also available. </p>
+  </div>
+  </div>
+
+  <div class="clear"></div>
+  <div class="buttons">
+     <div class="alpha grid_2"><div class="button">
+     <div class="text"><a href="http://wiki.bazaar.canonical.com/Download"><span>Get Bazaar</span></a></div></div></div>
+
+     <div class="grid_2"><div class="button">
+     <div class="text"><a href="http://wiki.bazaar.canonical.com/BzrExtras"><span>Get Going</span></a></div></div></div>
+
+     <div class="omega grid_2"><div class="button">
+     <div class="text"><a href="http://wiki.bazaar.canonical.com/BzrSupport"><span>Get Help</span></a></div></div></div>
+  </div>
+  </div>
+  <div class="grid_6">
+    
+    <h2><a href="https://launchpad.net/bazaar/+announcements">Community News</a> <a title="Atom 1.0 feed" href="http://feeds.launchpad.net/bazaar/announcements.atom"><img src="http://bazaar.canonical.com/bzricons/rss.png" /></a></h2>
+    
+    <p class="readmore">31-Jan-2014: <a href="https://launchpad.net/bzr-eclipse/+announcement/12414"><span>bzr-eclipse 1.4 released</span></a></p>
+    
+    <p class="readmore">02-Nov-2013: <a href="https://launchpad.net/bzr-eclipse/+announcement/12133"><span>bzr-eclipse 1.3 released</span></a></p>
+    
+    <p class="readmore">29-Oct-2013: <a href="https://launchpad.net/bzr-eclipse/+announcement/12113"><span>Celebrating 1000 downloads of bzr-eclipse!</span></a></p>
+    
+    <p class="readmore">04-Aug-2013: <a href="https://launchpad.net/bzr/+announcement/11804"><span>2.6.0 released</span></a></p>
+    
+    
+    <h2><a href="https://launchpad.net/bzr/+announcements">Core News</a> <a title="Atom 1.0 feed" href="http://feeds.launchpad.net/bzr/announcements.atom"><img src="http://bazaar.canonical.com/bzricons/rss.png" /></a></h2>
+    
+    <p class="readmore">04-Aug-2013: <a href="https://launchpad.net/bzr/+announcement/11804"><span>2.6.0 released</span></a></p>
+    
+    <p class="readmore">24-Jul-2012: <a href="https://launchpad.net/bzr/+announcement/10362"><span>2.6b2 released</span></a></p>
+    
+    
+    <h2><a href="http://bazaarvcs.wordpress.com">Developer's Blog</a> <a title="Atom 1.0 feed" href="http://bazaarvcs.wordpress.com/feed/"><img src="http://bazaar.canonical.com/bzricons/rss.png" /></a></h2>
+    
+    <p class="readmore">29-Aug-2011: <a href="http://bazaarvcs.wordpress.com/2011/08/29/our-blog-has-moved/"><span>Our blog has moved</span></a></p>
+    
+    <p class="readmore">02-Jun-2011: <a href="http://bazaarvcs.wordpress.com/2011/06/02/fault-line-bzr-plugin-to-guess-relevant-test-modules/"><span>fault-line: bzr plugin to guess relevant test modules</span></a></p>
+    
+    <p class="readmore">27-May-2011: <a href="http://bazaarvcs.wordpress.com/2011/05/27/the-bzr-beta-ppa-ubuntu-ppa-for-beta-users-has-moved/"><span>The bzr-beta-ppa Ubuntu PPA for Beta Users has moved</span></a></p>
+    
+    
+  </div>
+
+
+  <div class="grid_12" id="projects">
+    <p class="button logos">
+    Bazaar is used by thousands of projects, including:<br/>
+    <a href="http://www.gnu.org/" title="GNU"><img src="http://bazaar.canonical.com/bzricons/gnu.png"
+        height="32" alt="GNU" /></a><a href="http://www.linuxfoundation.org/" title="Linux Foundation"><img src="http://bazaar.canonical.com/bzricons/linux-foundation-48x48.png"
+        height="32" alt="Linux Foundation" /></a><a href="http://www.ubuntu.com/" title="Ubuntu"><img src="http://bazaar.canonical.com/bzricons/ubuntu_black-orange_hex_su.png"
+        height="32" alt="Ubuntu" /></a><a href="http://www.mysql.com/" title="MySQL"><img src="http://bazaar.canonical.com/bzricons/mysql.png"
+        height="32" alt="MySQL" /></a><a href="http://www.bugzilla.org/" title="Bugzilla"><img src="http://bazaar.canonical.com/bzricons/bugzilla.png"
+        height="32" alt="Bugzilla" /></a><a href="http://www.list.org/" title="GNU Mailman"><img src="http://bazaar.canonical.com/bzricons/mailman-logo2010-64x64.png"
+        height="32" alt="GNU Mailman" /></a><a href="http://www.debian.org" title="Debian"><img src="http://bazaar.canonical.com/bzricons/debian-logo-50x61.png"
+        height="32" alt="Debian" /></a><a href="http://www.askmonty.org/" title="MariaDB"><img src="http://bazaar.canonical.com/bzricons/maria-capt-64.png"
+        height="32" alt="MariaDB" /></a><a href="http://www.drizzle.org/" title="Drizzle"><img src="http://bazaar.canonical.com/bzricons/drizzle64.png"
+        height="32" alt="Drizzle" /></a><a href="../../inkscape.org/en/index.html" title="Inkscape"><img src="http://bazaar.canonical.com/bzricons/inkscape.logo.png"
+        height="32" alt="Inkscape" /></a><a href="https://launchpad.net/gwibber" title="Gwibber"><img src="http://bazaar.canonical.com/bzricons/gwibber.64x64.png"
+        height="32" alt="Gwibber" /></a><a href="http://www.squid-cache.org/" title="Squid Cache"><img src="http://bazaar.canonical.com/bzricons/SquidPackage-logo.png"
+        height="32" alt="Squid Cache" /></a><a href="http://launchpad.net/" title="Launchpad"><img src="http://bazaar.canonical.com/bzricons/launchpad-logo.png"
+        height="32" alt="Launchpad" /></a><a href="http://do.davebsd.com/" title="GNOME Do"><img src="http://bazaar.canonical.com/bzricons/do.png"
+        height="32" alt="GNOME Do" /></a><a href="http://www.bitlbee.org/" title="BitlBee"><img src="http://bazaar.canonical.com/bzricons/bitlbee.png"
+        height="32" alt="BitlBee" /></a>
+    </p>
+  </div>
+
+<div class="clear"></div>
+</div>
+
+</div> <!-- /content -->
+
+<div id="footer">
+
+<div id="nav-extended" class="container_12">
+  <div class="grid_3">
+    <h2> <a href="http://doc.bazaar.canonical.com/en/">Documentation</a> </h2>
+    <ul>
+      <li><a href="http://doc.bazaar.canonical.com/explorer/en/guide/">Desktop Guide (GUIs)</a></li>
+      <li><a href="http://doc.bazaar.canonical.com/latest/en/user-guide/">User Guide (Command Line)</a></li>
+      <li><a href="http://doc.bazaar.canonical.com/latest/en/mini-tutorial/">Bazaar in Five Minutes</a></li>
+      <li><a href="http://doc.bazaar.canonical.com/migration/en/">Migrating to Bazaar</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/Documentation">Community Documentation</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/BzrBlogs">Blogs</a></li>
+    </ul>
+  </div>
+  <div class="grid_3">
+    <h2> <a href="http://wiki.bazaar.canonical.com/BzrExtras">Extras</a> </h2>
+    <ul>
+      <li><a href="http://wiki.bazaar.canonical.com/WebInterfaces">Web Interfaces</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/LaunchpadIntegration/">Project Hosting</a></li>
+      <li><a href="http://doc.bazaar.canonical.com/explorer/en/">GUI Clients</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/3rdPartyTools">IDE Integrations</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/BzrPlugins">Plugins</a></li>
+    </ul>
+  </div>
+  <div class="grid_3">
+    <h2> <a href="http://wiki.bazaar.canonical.com/BzrSupport">Support</a> </h2>
+    <ul>
+      <li><a href="https://launchpad.net/bzr/+announcements">News and Announcements</a></li>
+      <li><a href="https://launchpad.net/products/bzr/+filebug">Report a Bug</a></li>
+      <li><a href="https://answers.launchpad.net/bzr">Ask a Question</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/BzrSupport#Mailing%20Lists">Mailing Lists</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/BzrSupport#IRC">IRC</a></li>
+      <li><a href="http://www.canonical.com/projects/bazaar">Commercial Support</a></li>
+    </ul>
+  </div>
+  <div class="grid_3">
+    <h2> <a href="http://doc.bazaar.canonical.com/developers/">Contribute</a> </h2>
+    <ul>
+      <li><a href="http://doc.bazaar.canonical.com/plugins/en/plugin-development.html">Plugins</a></li>
+      <li><a href="http://doc.bazaar.canonical.com/developers/testing.html">Tests</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/ContributingToTheDocs">Documentation</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/BzrTranslations">Translations</a></li>
+      <li><a href="http://wiki.bazaar.canonical.com/Welcome">Community Wiki</a></li>
+      <li><a href="http://doc.bazaar.canonical.com/developers/HACKING.html">Bazaar Developer Guide</a></li>
+    </ul>
+  </div>
+<div class="clear"></div>
+
+</div>
+
+<div id="copyright" class="container_12">
+	<p class="grid_12">Bazaar is a <a href="http://www.gnu.org/">GNU project</a>
+	available under the 
+	<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPL v2</a>
+	or later. 
+	&copy; 2009-10 <a href="http://www.canonical.com/">Canonical Ltd.</a></p>
+</div>
+
+<div class="clear"></div>
+
+</div>
+
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try{
+	  /* sab tracker */
+  var pageTracker = _gat._getTracker("UA-1018242-1");
+  pageTracker._trackPageview();
+  } catch(err) {}
+  try {
+	/* bazaar team tracker */
+	  var pageTracker = _gat._getTracker("UA-11329411-1");
+	  pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+
+
+</body>
+</html>

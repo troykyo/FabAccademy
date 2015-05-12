@@ -1,0 +1,2430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0082)http://shin-ajaran.blogspot.sg/2014/11/arduino-spectrum-analyzer-for-music-to.html -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/cb=gapi.loaded_3" async=""></script><script src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/cb=gapi.loaded_2" async=""></script><script src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/cb=gapi.loaded_1" async=""></script><script src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript">(function() { var b=window,f="chrome",g="tick",k="jstiming";(function(){function d(a){this.t={};this.tick=function(a,d,c){var e=void 0!=c?c:(new Date).getTime();this.t[a]=[e,d];if(void 0==c)try{b.console.timeStamp("CSI/"+a)}catch(h){}};this[g]("start",null,a)}var a;b.performance&&(a=b.performance.timing);var n=a?new d(a.responseStart):new d;b.jstiming={Timer:d,load:n};if(a){var c=a.navigationStart,h=a.responseStart;0<c&&h>=c&&(b[k].srt=h-c)}if(a){var e=b[k].load;0<c&&h>=c&&(e[g]("_wtsrt",void 0,c),e[g]("wtsrt_","_wtsrt",h),e[g]("tbsd_","wtsrt_"))}try{a=null,
+b[f]&&b[f].csi&&(a=Math.floor(b[f].csi().pageT),e&&0<c&&(e[g]("_tbnd",void 0,b[f].csi().startE),e[g]("tbnd_","_tbnd",c))),null==a&&b.gtbExternal&&(a=b.gtbExternal.pageT()),null==a&&b.external&&(a=b.external.pageT,e&&0<c&&(e[g]("_tbnd",void 0,b.external.startE),e[g]("tbnd_","_tbnd",c))),a&&(b[k].pt=a)}catch(p){}})();b.tickAboveFold=function(d){var a=0;if(d.offsetParent){do a+=d.offsetTop;while(d=d.offsetParent)}d=a;750>=d&&b[k].load[g]("aft")};var l=!1;function m(){l||(l=!0,b[k].load[g]("firstScrollTime"))}b.addEventListener?b.addEventListener("scroll",m,!1):b.attachEvent("onscroll",m);
+ })();</script>
+<meta content="blogger" name="generator">
+<link href="http://shin-ajaran.blogspot.sg/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://shin-ajaran.blogspot.com/2014/11/arduino-spectrum-analyzer-for-music-to.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="shinajaran - Atom" href="http://shin-ajaran.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="shinajaran - RSS" href="http://shin-ajaran.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="shinajaran - Atom" href="http://www.blogger.com/feeds/2137743283716015909/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="shinajaran - Atom" href="http://shin-ajaran.blogspot.com/feeds/2587632609301302402/comments/default">
+<link href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/10553492_969529513062299_6014774526377597243_n.jpg" rel="image_src">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>shinajaran: Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED</title>
+<link type="text/css" rel="stylesheet" href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/728935430-widget_css_bundle.css">
+<link type="text/css" rel="stylesheet" href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/gsearch.css">
+<link type="text/css" rel="stylesheet" href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/authorization.css">
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Stretch Denim
+Designer: Darren Delaye
+URL:      www.DarrenDelaye.com
+Date:     11 Jul 2006
+-----------------------------------------------
+*/
+/* Variable definitions
+====================
+<Variable name="bgColor" description="Page Background Color"
+type="color" default="#efefef">
+<Variable name="textColor" description="Text Color"
+type="color" default="#333333">
+<Variable name="linkColor" description="Link Color"
+type="color" default="#336699">
+<Variable name="headerBgColor" description="Page Header Background Color"
+type="color" default="#336699">
+<Variable name="headerTextColor" description="Page Header Text Color"
+type="color" default="#ffffff">
+<Variable name="headerCornersColor" description="Page Header Corners Color"
+type="color" default="#528bc5">
+<Variable name="mainBgColor" description="Main Background Color"
+type="color" default="#ffffff">
+<Variable name="borderColor" description="Border Color"
+type="color" default="#cccccc">
+<Variable name="dateHeaderColor" description="Date Header Color"
+type="color" default="#999999">
+<Variable name="sidebarTitleBgColor" description="Sidebar Title Background Color"
+type="color" default="#ffd595">
+<Variable name="sidebarTitleTextColor" description="Sidebar Title Text Color"
+type="color" default="#333333">
+<Variable name="bodyFont" description="Text Font"
+type="font" default="normal normal 100% Verdana, Arial, Sans-serif;">
+<Variable name="headerFont" description="Page Header Font"
+type="font" default="normal normal 210% Verdana, Arial, Sans-serif;">
+<Variable name="startSide" description="Start side in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="End side in blog language"
+type="automatic" default="right">
+*/
+body {
+background: #ffffcc;
+margin: 0;
+padding: 0px;
+font: x-small Verdana, Arial;
+text-align: center;
+color: #063E3F;
+font-size/* */:/**/small;
+font-size: /**/small;
+}
+a:link {
+color: #2D8930;
+}
+a:visited {
+color: #2D8930;
+}
+a img {
+border-width: 0;
+}
+#outer-wrapper {
+font: normal normal 130% Courier, monospace;
+}
+/* Header
+----------------------------------------------- */
+#header-wrapper {
+margin:0;
+padding: 0;
+background-color: #11593C;
+text-align: left;
+}
+#header {
+margin: 0 2%;
+background-color: #78B749;
+color: #ffffff;
+padding: 0;
+font: normal normal 210% Verdana, Arial, Sans-serif;;
+position: relative;
+}
+h1.title {
+padding-top: 38px;
+margin: 0 1% .1em;
+line-height: 1.2em;
+font-size: 100%;
+}
+h1.title a, h1.title a:visited {
+color: #ffffff;
+text-decoration: none;
+}
+#header .description {
+display: block;
+margin: 0 1%;
+padding: 0 0 40px;
+line-height: 1.4em;
+font-size: 50%;
+}
+/* Content
+----------------------------------------------- */
+.clear {
+clear: both;
+}
+#content-wrapper {
+margin: 0 2%;
+padding: 0 0 15px;
+text-align: left;
+background-color: #ffffcc;
+border: 1px solid #11593C;
+border-top: 0;
+}
+#main-wrapper {
+margin-left: 1%;
+width: 64%;
+float: left;
+background-color: #ffffcc;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+#sidebar-wrapper {
+margin-right: 1%;
+width: 29%;
+float: right;
+background-color: #ffffcc;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+/* Headings
+----------------------------------------------- */
+h2, h3 {
+margin: 0;
+}
+/* Posts
+----------------------------------------------- */
+.date-header {
+margin: 1.5em 0 0;
+font-weight: normal;
+color: #999999;
+font-size: 100%;
+}
+.post {
+margin: 0 0 1.5em;
+padding-bottom: 1.5em;
+}
+.post-title {
+margin: 0;
+padding: 0;
+font-size: 125%;
+font-weight: bold;
+line-height: 1.1em;
+}
+.post-title a, .post-title a:visited, .post-title strong {
+text-decoration: none;
+color: #063E3F;
+font-weight: bold;
+}
+.post div {
+margin: 0 0 .75em;
+line-height: 1.3em;
+}
+.post-footer {
+margin: -.25em 0 0;
+color: #063E3F;
+font-size: 87%;
+}
+.post-footer .span {
+margin-right: .3em;
+}
+.post img {
+padding: 4px;
+border: 1px solid #11593C;
+}
+.post blockquote {
+margin:.75em 0;
+border:1px solid #596;
+border-width:1px 1px;
+padding:5px 15px;
+display: block;
+background-color: #dedede;
+}
+code {
+font-family: Courier;
+margin:.75em 0;
+border:1px solid #596;
+border-width:1px 1px;
+padding:5px 15px;
+display: block;
+background-color: #dedede;
+white-space: pre;
+}
+.post blockquote p {
+margin: .75em 0;
+}
+/* Comments
+----------------------------------------------- */
+#comments h4 {
+margin: 1em 0;
+color: #999999;
+}
+#comments h4 strong {
+font-size: 110%;
+}
+#comments-block {
+margin: 1em 0 1.5em;
+line-height: 1.3em;
+}
+#comments-block dt {
+margin: .5em 0;
+}
+#comments-block dd {
+margin: .25em 0 0;
+}
+#comments-block dd.comment-footer {
+margin: -.25em 0 2em;
+line-height: 1.4em;
+font-size: 78%;
+}
+#comments-block dd p {
+margin: 0 0 .75em;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+/* Sidebar Content
+----------------------------------------------- */
+.sidebar h2 {
+margin: 1.6em 0 .5em;
+padding: 4px 5px;
+background-color: #78B749;
+font-size: 100%;
+color: #1B703A;
+}
+.sidebar ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+.sidebar li {
+margin: 0;
+padding-top: 0;
+padding-right: 0;
+padding-bottom: .5em;
+padding-left: 15px;
+text-indent: -15px;
+line-height: 1.5em;
+}
+.sidebar {
+color: #063E3F;
+line-height:1.3em;
+}
+.sidebar .widget {
+margin-bottom: 1em;
+}
+.sidebar .widget-content {
+margin: 0 5px;
+}
+/* Profile
+----------------------------------------------- */
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+padding: 4px;
+border: 1px solid #11593C;
+}
+.profile-data {
+margin:0;
+text-transform:uppercase;
+letter-spacing:.1em;
+font-weight: bold;
+line-height: 1.6em;
+font-size: 78%;
+}
+.profile-datablock {
+margin:.5em 0 .5em;
+}
+.profile-textblock {
+margin: 0.5em 0;
+line-height: 1.6em;
+}
+/* Footer
+----------------------------------------------- */
+#footer {
+clear: both;
+text-align: center;
+color: #063E3F;
+}
+#footer .widget {
+margin:.5em;
+padding-top: 20px;
+font-size: 85%;
+line-height: 1.5em;
+text-align: left;
+}
+/** Page structure tweaks for layout editor wireframe */
+body#layout #header {
+width: 750px;
+}
+
+--></style>
+<script type="text/javascript">var a="indexOf",b="&m=1",e="(^|&)m=",f="?",g="?m=1";function h(){var c=window.location.href,d=c.split(f);switch(d.length){case 1:return c+g;case 2:return 0<=d[1].search(e)?null:c+b;default:return null}}var k=navigator.userAgent;if(-1!=k[a]("Mobile")&&-1!=k[a]("WebKit")&&-1==k[a]("iPad")||-1!=k[a]("Opera Mini")||-1!=k[a]("IEMobile")){var l=h();l&&window.location.replace(l)};
+</script><style type="text/css"></style><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/js/google_top_exp.js"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}</style><script type="text/javascript" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/saved_resource"></script><link type="text/css" href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/default+en.css" rel="stylesheet"><script type="text/javascript" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/default+en.I.js"></script></head>
+<body data-pinterest-extension-installed="cr1.35">
+<div class="navbar section" id="navbar"><div class="widget Navbar" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" width="100%" id="navbar-iframe" name="navbar-iframe" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/navbar.html"></iframe></div>
+<script type="text/javascript" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+        gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+          if (gapi.iframes && gapi.iframes.getContext) {
+            gapi.iframes.getContext().openChild({
+                url: 'https://www.blogger.com/navbar.g?targetBlogID\0752137743283716015909\46blogName\75shinajaran\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75BLUE\46layoutType\75LAYOUTS\46searchRoot\75http://shin-ajaran.blogspot.com/search\46blogLocale\75en\46v\0752\46homepageUrl\75http://shin-ajaran.blogspot.com/\46targetPostID\0752587632609301302402\46blogPostOrPageUrl\75http://shin-ajaran.blogspot.com/2014/11/arduino-spectrum-analyzer-for-music-to.html\46vt\0754240166516393155731',
+                where: document.getElementById("navbar-iframe-container"),
+                id: "navbar-iframe"
+            });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id="outer-wrapper"><div id="wrap2">
+<!-- skip links for text browsers -->
+<span id="skiplinks" style="display:none;">
+<a href="http://shin-ajaran.blogspot.sg/2014/11/arduino-spectrum-analyzer-for-music-to.html#main">skip to main </a> |
+      <a href="http://shin-ajaran.blogspot.sg/2014/11/arduino-spectrum-analyzer-for-music-to.html#sidebar">skip to sidebar</a>
+</span>
+<div id="header-wrapper">
+<div class="header section" id="header"><div class="widget Header" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://shin-ajaran.blogspot.sg/">shinajaran</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>Always two there are, a master and an apprentice. -yoda</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id="content-wrapper">
+<div id="crosscol-wrapper" style="text-align:center">
+<div class="crosscol section" id="crosscol"></div>
+</div>
+<div id="main-wrapper">
+<div class="main section" id="main"><div id="uds-searchControl"><a name="uds-search-results"></a><div id="uds-searchResults"><div class="gsc-control" dir="ltr"><div class="gsc-results-wrapper-nooverlay"><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">This Blog</div><span class="gs-spacer"> </span><div tabindex="0" class=" gsc-tabHeader gsc-tabhInactive gsc-inline-block">Linked From Here</div><span class="gs-spacer"> </span><div tabindex="0" class=" gsc-tabHeader gsc-tabhInactive gsc-inline-block">The Web</div><span class="gs-spacer"> </span></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td></tr></tbody></table></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">This Blog</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-more-results-active"><div class="gsc-result-selector gsc-one-result" title="show one result">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="show more results">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="show all results">&nbsp;</div></div></td><td class="gsc-configLabelCell"><span class="gsc-configLabel gsc-twiddle-closed" title="settings">&nbsp;</span></td></tr></tbody></table><div class="gsc-config gsc-blogConfig" style="display: none;"><form class="gsc-config gsc-blogConfig"></form></div><div><div class="gsc-expansionArea"></div></div></div><div class="gsc-resultsRoot gsc-tabData gsc-tabdInactive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Linked From Here</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-more-results-active"><div class="gsc-result-selector gsc-one-result" title="show one result">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="show more results">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="show all results">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div><div class="gsc-resultsRoot gsc-tabData gsc-tabdInactive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">The Web</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-more-results-active"><div class="gsc-result-selector gsc-one-result" title="show one result">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="show more results">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="show all results">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div></div><div id="uds-searchClearResults" class="gsc-clear-button" style="display: none;">&nbsp;</div></div><div class="widget Blog" id="Blog1">
+<div class="blog-posts hfeed">
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<h2 class="date-header"><span>Sunday, November 9, 2014</span></h2>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<meta content="https://scontent-b.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10553492_969529513062299_6014774526377597243_n.jpg?oh=edf8ad509b8f88e46db52c4c3b618acc&amp;oe=54D7906D" itemprop="image_url">
+<meta content="2137743283716015909" itemprop="blogId">
+<meta content="2587632609301302402" itemprop="postId">
+<a name="2587632609301302402"></a>
+<h3 class="post-title entry-title" itemprop="name">
+Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-2587632609301302402" itemprop="description articleBody">
+Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED<br>
+<br>
+years back yours truly have made<a href="http://shin-ajaran.blogspot.sg/2011/07/diy-arduino-vu-spectrum-analyzer.html" target="_blank"> a contraption to convey the concept of fourier transform</a> http://shin-ajaran.blogspot.sg/2011/07/diy-arduino-vu-spectrum-analyzer.html using Arduino, LOL shield and the FFT library. The piece of code is still hanging on the Internet, but the hardware has been re-purposed for the better of humanity.<br>
+<br>
+Not long ago, yours truly come across the <a href="http://wiki.openmusiclabs.com/wiki/ArduinoFHT" target="_blank">FHT (Fast Hartley Transform) by Open Music Lab</a> http://wiki.openmusiclabs.com/wiki/ArduinoFHT while browsing the Internet for inspirations to continue with the current working life. This algorithm claims to be more efficient in terms of CPU cycles and memory footprint; well, true to speak because the premise is: FHT works on the "real" portion of the data whereas FFT works on both the "real" and "complex" portion of the data. Really excited by this discovery of the code library, yours truly can't wait to get his hand dirty on making a contraption that uses the above FHT. Following the instructions in the FHT wiki for installing the library and sample data output using processing is a breeze. This wiki also comes complete with a 128 channel spectrum visualizer written using processing; Scroll down until you hit "<a class="attachment" href="http://wiki.openmusiclabs.com/wiki/ArduinoFHT?action=AttachFile&do=view&target=FHT_128_channel_analyser.zip" style="background-color: white; border: 0px; color: #0044b3; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 1em; text-decoration: none;" title="FHT_128_channel_analyser.zip">FHT_128_channel_analyser.zip</a>" http://wiki.openmusiclabs.com/wiki/ArduinoFHT?action=AttachFile&amp;do=view&amp;target=FHT_128_channel_analyser.zip . A visualizer is very handy when it comes to deciding the "strategy" for the music to light algorithm.<br>
+<br>
+Check out the video below for a demo of this make<br>
+<div class="separator" style="clear: both; text-align: center;">
+<object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="https://i.ytimg.com/vi/RtaLZSWX-wA/0.jpg" height="266" style="clear: left; float: left;" width="320"><param name="movie" value="https://www.youtube.com/v/RtaLZSWX-wA?version=3&amp;f=user_uploads&amp;c=google-webdrive-0&amp;app=youtube_gdata"><param name="bgcolor" value="#FFFFFF"><param name="allowFullScreen" value="true"><embed width="320" height="266" src="https://www.youtube.com/v/RtaLZSWX-wA?version=3&amp;f=user_uploads&amp;c=google-webdrive-0&amp;app=youtube_gdata" type="application/x-shockwave-flash" allowfullscreen="true"></object></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+This make assumes the following parts come in handy<br>
+1. 1x Arduino<br>
+2. 1x RGB LED (common anode)<br>
+3. 1x 3D printed LED diffuser<br>
+4. 1x electret microphone &amp; LM386 audio amplifier.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/10553492_969529513062299_6014774526377597243_n.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="231" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/10553492_969529513062299_6014774526377597243_n.jpg" width="320"></a></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Prelude: making the amplifier for electret microphone.<br>
+An <a href="http://en.wikipedia.org/wiki/Electret_microphone" target="_blank">electret microphone</a>&nbsp;http://en.wikipedia.org/wiki/Electret_microphone is a cheapo microphone that reads in analog signal generated by sound frequency. This analog signal has to be amplified, and then passed into a microprocessor based system (e.g Arduino) for ADC (Analog to Digital Conversion). Once data is digitized, humans can manipulate the signal with code, hence the terminology : digital signal processing.<br>
+<br>
+This make assumes an <a href="http://www.ti.com/lit/ds/symlink/lm386.pdf" target="_blank">LM386 as the audio amplifier</a>&nbsp;http://www.ti.com/lit/ds/symlink/lm386.pdf for the electret microphone is available.<br>
+There are many manufacturers of LM386, one of the is TI. Refer to the link above for spec sheet and then scroll down to the diagram "amplifier with minimum parts". If you need help on making a LM386 based audio amplifier, <a href="http://www.instructables.com/id/Know-Your-IC-LM386/" target="_blank">this instructable</a> http://www.instructables.com/id/Know-Your-IC-LM386/ is helpful on getting started.<br>
+<br>
+Prelude2: For those that are still clueless what is happening, check out this very thoroughly written article on <a href="https://bochovj.wordpress.com/2013/06/23/sound-analysis-in-arduino/" target="_blank">sound analysis</a>&nbsp;https://bochovj.wordpress.com/2013/06/23/sound-analysis-in-arduino/.<br>
+<br>
+Step1: The wiring<br>
+Connect output from electret &amp; LM386 audio amplifier to A0 of arduino, and VCC and GND to arduino's VCC and GND. Connect common anode RGB LED to pin 3,4,5,6 of Arduino;with pin4 dedicated as the common anode, pin3,5,6 dedicated as PWM pin. It is good to add some 220ohm resistors across the pin3,5,6 for current limiting. Yours truly has none available, hence the omission in the picture below. These 4pins can be used as the input to a transistor switched 12V load to control LED light strips. The following picture describes the wiring, and LED diffuser with Fibre Optic cable<br>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/10171045_969529973062253_5817830879561610071_n.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="179" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/10171045_969529973062253_5817830879561610071_n.jpg" width="320"></a></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Step2: the code and the strategy of choosing which frequency is for what colour<br>
+<br>
+There are several ways to map the frequency spectrum to the RGB colour spectrum. Using AnalogWrite() on R, G,B; each PWM pin is capable of a value from 0-255 to drive the individual LED in the RGB LED. Thus, the total combination of colours possible (in code) are 256*256*256 = 16777216; thats a whopping 16M worth of variations.<br>
+<br>
+For the visually inclined, the RGB chart below is a good guide for giving an idea what is the final colour blend at the RGB LED output corresponding to the R, G, B value written by AnalogWrite().<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/rgb.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="122" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/rgb.jpg" width="320"></a></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Processing has a useful article on <a href="https://processing.org/tutorials/color/" target="_blank">colour</a>&nbsp;https://processing.org/tutorials/color/ which yours truly think it helps with visualizing colour using code.<br>
+<br>
+The questions come begging: How to map audio frequency to the colour spectrum??<br>
+Years ago, yours truly did an <a href="http://shin-ajaran.blogspot.sg/2012/03/arduino-music-to-rgb-with-lolss.html" target="_blank">attempt at mapping colour to frequency using the self made LOLs shield</a>&nbsp;http://shin-ajaran.blogspot.sg/2012/03/arduino-music-to-rgb-with-lolss.html, but it is not visually appealing.<br>
+<br>
+Drawing inspiration from yours truly secondary school physics: human voice ranges from 85Hz to 255Hz; male voice is at lower frequency bands 85Hz-180Hz whereas female voice is at higher frequency bands 165Hz to 255Hz. As for human hearing, it is from 20Hz to 20K Hz. Futhermore, each musical instruments has it's own frequency range, and as we know, music composes of a variety of frequency stemming for human voice and/or musical instruments. Hence, the choice of strategy will be reflected in the colour observed while a piece of music is played.<br>
+<br>
+Strategy: mapping audio frequency to colour spectrum<br>
+1. Mapping of human hearing e.g 20Hz to 20K Hz to 16777216 of possible RGB colours<br>
+1a. Mapping of whole audio frequency bands to 6777216 of possible RGB colours.<br>
+2. Choosing 3 channels deliberately; one each from the low, mid, and high frequency bands as observed using the spectrum visualizer mentioned earlier. The 3 channels of low, mid, and high corresponds to Blue, Green, and Red; with the intensity of the colour corresponds to the amplitude of that chosen channel. The output of RGB LED will then be "blended".<br>
+3. Similar to 2, but instead of choosing the channels deliberately, this algo is to group frequency bands into larger low, mid, and high frequency bands; within each of this group of larger frequency bands , the amplitude that is used to turn on the corresponding LED is the result of averaging all the amplitude from the frequency bands. <br>
+4. Similar to 2,3, but first apply a Low Pass Filter at the frequency bands.<br>
+5. LED activated by predefined threshold on frequency band<br>
+6. .....<br>
+...<br>
+N. ......<br>
+It seems to yours truly, finding an ideal mapping of music genre to colour is going to be an never ending story.<br>
+Cut the chase, let's go to the code.<br>
+<script src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/6e54aff7e3d236d17ac4.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist15889429" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-myfhtnrgb-L1" rel="file-myfhtnrgb-L1">1</span>
+            <span class="line-number" id="file-myfhtnrgb-L2" rel="file-myfhtnrgb-L2">2</span>
+            <span class="line-number" id="file-myfhtnrgb-L3" rel="file-myfhtnrgb-L3">3</span>
+            <span class="line-number" id="file-myfhtnrgb-L4" rel="file-myfhtnrgb-L4">4</span>
+            <span class="line-number" id="file-myfhtnrgb-L5" rel="file-myfhtnrgb-L5">5</span>
+            <span class="line-number" id="file-myfhtnrgb-L6" rel="file-myfhtnrgb-L6">6</span>
+            <span class="line-number" id="file-myfhtnrgb-L7" rel="file-myfhtnrgb-L7">7</span>
+            <span class="line-number" id="file-myfhtnrgb-L8" rel="file-myfhtnrgb-L8">8</span>
+            <span class="line-number" id="file-myfhtnrgb-L9" rel="file-myfhtnrgb-L9">9</span>
+            <span class="line-number" id="file-myfhtnrgb-L10" rel="file-myfhtnrgb-L10">10</span>
+            <span class="line-number" id="file-myfhtnrgb-L11" rel="file-myfhtnrgb-L11">11</span>
+            <span class="line-number" id="file-myfhtnrgb-L12" rel="file-myfhtnrgb-L12">12</span>
+            <span class="line-number" id="file-myfhtnrgb-L13" rel="file-myfhtnrgb-L13">13</span>
+            <span class="line-number" id="file-myfhtnrgb-L14" rel="file-myfhtnrgb-L14">14</span>
+            <span class="line-number" id="file-myfhtnrgb-L15" rel="file-myfhtnrgb-L15">15</span>
+            <span class="line-number" id="file-myfhtnrgb-L16" rel="file-myfhtnrgb-L16">16</span>
+            <span class="line-number" id="file-myfhtnrgb-L17" rel="file-myfhtnrgb-L17">17</span>
+            <span class="line-number" id="file-myfhtnrgb-L18" rel="file-myfhtnrgb-L18">18</span>
+            <span class="line-number" id="file-myfhtnrgb-L19" rel="file-myfhtnrgb-L19">19</span>
+            <span class="line-number" id="file-myfhtnrgb-L20" rel="file-myfhtnrgb-L20">20</span>
+            <span class="line-number" id="file-myfhtnrgb-L21" rel="file-myfhtnrgb-L21">21</span>
+            <span class="line-number" id="file-myfhtnrgb-L22" rel="file-myfhtnrgb-L22">22</span>
+            <span class="line-number" id="file-myfhtnrgb-L23" rel="file-myfhtnrgb-L23">23</span>
+            <span class="line-number" id="file-myfhtnrgb-L24" rel="file-myfhtnrgb-L24">24</span>
+            <span class="line-number" id="file-myfhtnrgb-L25" rel="file-myfhtnrgb-L25">25</span>
+            <span class="line-number" id="file-myfhtnrgb-L26" rel="file-myfhtnrgb-L26">26</span>
+            <span class="line-number" id="file-myfhtnrgb-L27" rel="file-myfhtnrgb-L27">27</span>
+            <span class="line-number" id="file-myfhtnrgb-L28" rel="file-myfhtnrgb-L28">28</span>
+            <span class="line-number" id="file-myfhtnrgb-L29" rel="file-myfhtnrgb-L29">29</span>
+            <span class="line-number" id="file-myfhtnrgb-L30" rel="file-myfhtnrgb-L30">30</span>
+            <span class="line-number" id="file-myfhtnrgb-L31" rel="file-myfhtnrgb-L31">31</span>
+            <span class="line-number" id="file-myfhtnrgb-L32" rel="file-myfhtnrgb-L32">32</span>
+            <span class="line-number" id="file-myfhtnrgb-L33" rel="file-myfhtnrgb-L33">33</span>
+            <span class="line-number" id="file-myfhtnrgb-L34" rel="file-myfhtnrgb-L34">34</span>
+            <span class="line-number" id="file-myfhtnrgb-L35" rel="file-myfhtnrgb-L35">35</span>
+            <span class="line-number" id="file-myfhtnrgb-L36" rel="file-myfhtnrgb-L36">36</span>
+            <span class="line-number" id="file-myfhtnrgb-L37" rel="file-myfhtnrgb-L37">37</span>
+            <span class="line-number" id="file-myfhtnrgb-L38" rel="file-myfhtnrgb-L38">38</span>
+            <span class="line-number" id="file-myfhtnrgb-L39" rel="file-myfhtnrgb-L39">39</span>
+            <span class="line-number" id="file-myfhtnrgb-L40" rel="file-myfhtnrgb-L40">40</span>
+            <span class="line-number" id="file-myfhtnrgb-L41" rel="file-myfhtnrgb-L41">41</span>
+            <span class="line-number" id="file-myfhtnrgb-L42" rel="file-myfhtnrgb-L42">42</span>
+            <span class="line-number" id="file-myfhtnrgb-L43" rel="file-myfhtnrgb-L43">43</span>
+            <span class="line-number" id="file-myfhtnrgb-L44" rel="file-myfhtnrgb-L44">44</span>
+            <span class="line-number" id="file-myfhtnrgb-L45" rel="file-myfhtnrgb-L45">45</span>
+            <span class="line-number" id="file-myfhtnrgb-L46" rel="file-myfhtnrgb-L46">46</span>
+            <span class="line-number" id="file-myfhtnrgb-L47" rel="file-myfhtnrgb-L47">47</span>
+            <span class="line-number" id="file-myfhtnrgb-L48" rel="file-myfhtnrgb-L48">48</span>
+            <span class="line-number" id="file-myfhtnrgb-L49" rel="file-myfhtnrgb-L49">49</span>
+            <span class="line-number" id="file-myfhtnrgb-L50" rel="file-myfhtnrgb-L50">50</span>
+            <span class="line-number" id="file-myfhtnrgb-L51" rel="file-myfhtnrgb-L51">51</span>
+            <span class="line-number" id="file-myfhtnrgb-L52" rel="file-myfhtnrgb-L52">52</span>
+            <span class="line-number" id="file-myfhtnrgb-L53" rel="file-myfhtnrgb-L53">53</span>
+            <span class="line-number" id="file-myfhtnrgb-L54" rel="file-myfhtnrgb-L54">54</span>
+            <span class="line-number" id="file-myfhtnrgb-L55" rel="file-myfhtnrgb-L55">55</span>
+            <span class="line-number" id="file-myfhtnrgb-L56" rel="file-myfhtnrgb-L56">56</span>
+            <span class="line-number" id="file-myfhtnrgb-L57" rel="file-myfhtnrgb-L57">57</span>
+            <span class="line-number" id="file-myfhtnrgb-L58" rel="file-myfhtnrgb-L58">58</span>
+            <span class="line-number" id="file-myfhtnrgb-L59" rel="file-myfhtnrgb-L59">59</span>
+            <span class="line-number" id="file-myfhtnrgb-L60" rel="file-myfhtnrgb-L60">60</span>
+            <span class="line-number" id="file-myfhtnrgb-L61" rel="file-myfhtnrgb-L61">61</span>
+            <span class="line-number" id="file-myfhtnrgb-L62" rel="file-myfhtnrgb-L62">62</span>
+            <span class="line-number" id="file-myfhtnrgb-L63" rel="file-myfhtnrgb-L63">63</span>
+            <span class="line-number" id="file-myfhtnrgb-L64" rel="file-myfhtnrgb-L64">64</span>
+            <span class="line-number" id="file-myfhtnrgb-L65" rel="file-myfhtnrgb-L65">65</span>
+            <span class="line-number" id="file-myfhtnrgb-L66" rel="file-myfhtnrgb-L66">66</span>
+            <span class="line-number" id="file-myfhtnrgb-L67" rel="file-myfhtnrgb-L67">67</span>
+            <span class="line-number" id="file-myfhtnrgb-L68" rel="file-myfhtnrgb-L68">68</span>
+            <span class="line-number" id="file-myfhtnrgb-L69" rel="file-myfhtnrgb-L69">69</span>
+            <span class="line-number" id="file-myfhtnrgb-L70" rel="file-myfhtnrgb-L70">70</span>
+            <span class="line-number" id="file-myfhtnrgb-L71" rel="file-myfhtnrgb-L71">71</span>
+            <span class="line-number" id="file-myfhtnrgb-L72" rel="file-myfhtnrgb-L72">72</span>
+            <span class="line-number" id="file-myfhtnrgb-L73" rel="file-myfhtnrgb-L73">73</span>
+            <span class="line-number" id="file-myfhtnrgb-L74" rel="file-myfhtnrgb-L74">74</span>
+            <span class="line-number" id="file-myfhtnrgb-L75" rel="file-myfhtnrgb-L75">75</span>
+            <span class="line-number" id="file-myfhtnrgb-L76" rel="file-myfhtnrgb-L76">76</span>
+            <span class="line-number" id="file-myfhtnrgb-L77" rel="file-myfhtnrgb-L77">77</span>
+            <span class="line-number" id="file-myfhtnrgb-L78" rel="file-myfhtnrgb-L78">78</span>
+            <span class="line-number" id="file-myfhtnrgb-L79" rel="file-myfhtnrgb-L79">79</span>
+            <span class="line-number" id="file-myfhtnrgb-L80" rel="file-myfhtnrgb-L80">80</span>
+            <span class="line-number" id="file-myfhtnrgb-L81" rel="file-myfhtnrgb-L81">81</span>
+            <span class="line-number" id="file-myfhtnrgb-L82" rel="file-myfhtnrgb-L82">82</span>
+            <span class="line-number" id="file-myfhtnrgb-L83" rel="file-myfhtnrgb-L83">83</span>
+            <span class="line-number" id="file-myfhtnrgb-L84" rel="file-myfhtnrgb-L84">84</span>
+            <span class="line-number" id="file-myfhtnrgb-L85" rel="file-myfhtnrgb-L85">85</span>
+            <span class="line-number" id="file-myfhtnrgb-L86" rel="file-myfhtnrgb-L86">86</span>
+            <span class="line-number" id="file-myfhtnrgb-L87" rel="file-myfhtnrgb-L87">87</span>
+            <span class="line-number" id="file-myfhtnrgb-L88" rel="file-myfhtnrgb-L88">88</span>
+            <span class="line-number" id="file-myfhtnrgb-L89" rel="file-myfhtnrgb-L89">89</span>
+            <span class="line-number" id="file-myfhtnrgb-L90" rel="file-myfhtnrgb-L90">90</span>
+            <span class="line-number" id="file-myfhtnrgb-L91" rel="file-myfhtnrgb-L91">91</span>
+            <span class="line-number" id="file-myfhtnrgb-L92" rel="file-myfhtnrgb-L92">92</span>
+            <span class="line-number" id="file-myfhtnrgb-L93" rel="file-myfhtnrgb-L93">93</span>
+            <span class="line-number" id="file-myfhtnrgb-L94" rel="file-myfhtnrgb-L94">94</span>
+            <span class="line-number" id="file-myfhtnrgb-L95" rel="file-myfhtnrgb-L95">95</span>
+            <span class="line-number" id="file-myfhtnrgb-L96" rel="file-myfhtnrgb-L96">96</span>
+            <span class="line-number" id="file-myfhtnrgb-L97" rel="file-myfhtnrgb-L97">97</span>
+            <span class="line-number" id="file-myfhtnrgb-L98" rel="file-myfhtnrgb-L98">98</span>
+            <span class="line-number" id="file-myfhtnrgb-L99" rel="file-myfhtnrgb-L99">99</span>
+            <span class="line-number" id="file-myfhtnrgb-L100" rel="file-myfhtnrgb-L100">100</span>
+            <span class="line-number" id="file-myfhtnrgb-L101" rel="file-myfhtnrgb-L101">101</span>
+            <span class="line-number" id="file-myfhtnrgb-L102" rel="file-myfhtnrgb-L102">102</span>
+            <span class="line-number" id="file-myfhtnrgb-L103" rel="file-myfhtnrgb-L103">103</span>
+            <span class="line-number" id="file-myfhtnrgb-L104" rel="file-myfhtnrgb-L104">104</span>
+            <span class="line-number" id="file-myfhtnrgb-L105" rel="file-myfhtnrgb-L105">105</span>
+            <span class="line-number" id="file-myfhtnrgb-L106" rel="file-myfhtnrgb-L106">106</span>
+            <span class="line-number" id="file-myfhtnrgb-L107" rel="file-myfhtnrgb-L107">107</span>
+            <span class="line-number" id="file-myfhtnrgb-L108" rel="file-myfhtnrgb-L108">108</span>
+            <span class="line-number" id="file-myfhtnrgb-L109" rel="file-myfhtnrgb-L109">109</span>
+            <span class="line-number" id="file-myfhtnrgb-L110" rel="file-myfhtnrgb-L110">110</span>
+            <span class="line-number" id="file-myfhtnrgb-L111" rel="file-myfhtnrgb-L111">111</span>
+            <span class="line-number" id="file-myfhtnrgb-L112" rel="file-myfhtnrgb-L112">112</span>
+            <span class="line-number" id="file-myfhtnrgb-L113" rel="file-myfhtnrgb-L113">113</span>
+            <span class="line-number" id="file-myfhtnrgb-L114" rel="file-myfhtnrgb-L114">114</span>
+            <span class="line-number" id="file-myfhtnrgb-L115" rel="file-myfhtnrgb-L115">115</span>
+            <span class="line-number" id="file-myfhtnrgb-L116" rel="file-myfhtnrgb-L116">116</span>
+            <span class="line-number" id="file-myfhtnrgb-L117" rel="file-myfhtnrgb-L117">117</span>
+            <span class="line-number" id="file-myfhtnrgb-L118" rel="file-myfhtnrgb-L118">118</span>
+            <span class="line-number" id="file-myfhtnrgb-L119" rel="file-myfhtnrgb-L119">119</span>
+            <span class="line-number" id="file-myfhtnrgb-L120" rel="file-myfhtnrgb-L120">120</span>
+            <span class="line-number" id="file-myfhtnrgb-L121" rel="file-myfhtnrgb-L121">121</span>
+            <span class="line-number" id="file-myfhtnrgb-L122" rel="file-myfhtnrgb-L122">122</span>
+            <span class="line-number" id="file-myfhtnrgb-L123" rel="file-myfhtnrgb-L123">123</span>
+            <span class="line-number" id="file-myfhtnrgb-L124" rel="file-myfhtnrgb-L124">124</span>
+            <span class="line-number" id="file-myfhtnrgb-L125" rel="file-myfhtnrgb-L125">125</span>
+            <span class="line-number" id="file-myfhtnrgb-L126" rel="file-myfhtnrgb-L126">126</span>
+            <span class="line-number" id="file-myfhtnrgb-L127" rel="file-myfhtnrgb-L127">127</span>
+            <span class="line-number" id="file-myfhtnrgb-L128" rel="file-myfhtnrgb-L128">128</span>
+            <span class="line-number" id="file-myfhtnrgb-L129" rel="file-myfhtnrgb-L129">129</span>
+            <span class="line-number" id="file-myfhtnrgb-L130" rel="file-myfhtnrgb-L130">130</span>
+            <span class="line-number" id="file-myfhtnrgb-L131" rel="file-myfhtnrgb-L131">131</span>
+            <span class="line-number" id="file-myfhtnrgb-L132" rel="file-myfhtnrgb-L132">132</span>
+            <span class="line-number" id="file-myfhtnrgb-L133" rel="file-myfhtnrgb-L133">133</span>
+            <span class="line-number" id="file-myfhtnrgb-L134" rel="file-myfhtnrgb-L134">134</span>
+            <span class="line-number" id="file-myfhtnrgb-L135" rel="file-myfhtnrgb-L135">135</span>
+            <span class="line-number" id="file-myfhtnrgb-L136" rel="file-myfhtnrgb-L136">136</span>
+            <span class="line-number" id="file-myfhtnrgb-L137" rel="file-myfhtnrgb-L137">137</span>
+            <span class="line-number" id="file-myfhtnrgb-L138" rel="file-myfhtnrgb-L138">138</span>
+            <span class="line-number" id="file-myfhtnrgb-L139" rel="file-myfhtnrgb-L139">139</span>
+            <span class="line-number" id="file-myfhtnrgb-L140" rel="file-myfhtnrgb-L140">140</span>
+            <span class="line-number" id="file-myfhtnrgb-L141" rel="file-myfhtnrgb-L141">141</span>
+            <span class="line-number" id="file-myfhtnrgb-L142" rel="file-myfhtnrgb-L142">142</span>
+            <span class="line-number" id="file-myfhtnrgb-L143" rel="file-myfhtnrgb-L143">143</span>
+            <span class="line-number" id="file-myfhtnrgb-L144" rel="file-myfhtnrgb-L144">144</span>
+            <span class="line-number" id="file-myfhtnrgb-L145" rel="file-myfhtnrgb-L145">145</span>
+            <span class="line-number" id="file-myfhtnrgb-L146" rel="file-myfhtnrgb-L146">146</span>
+            <span class="line-number" id="file-myfhtnrgb-L147" rel="file-myfhtnrgb-L147">147</span>
+            <span class="line-number" id="file-myfhtnrgb-L148" rel="file-myfhtnrgb-L148">148</span>
+            <span class="line-number" id="file-myfhtnrgb-L149" rel="file-myfhtnrgb-L149">149</span>
+            <span class="line-number" id="file-myfhtnrgb-L150" rel="file-myfhtnrgb-L150">150</span>
+            <span class="line-number" id="file-myfhtnrgb-L151" rel="file-myfhtnrgb-L151">151</span>
+            <span class="line-number" id="file-myfhtnrgb-L152" rel="file-myfhtnrgb-L152">152</span>
+            <span class="line-number" id="file-myfhtnrgb-L153" rel="file-myfhtnrgb-L153">153</span>
+            <span class="line-number" id="file-myfhtnrgb-L154" rel="file-myfhtnrgb-L154">154</span>
+            <span class="line-number" id="file-myfhtnrgb-L155" rel="file-myfhtnrgb-L155">155</span>
+            <span class="line-number" id="file-myfhtnrgb-L156" rel="file-myfhtnrgb-L156">156</span>
+            <span class="line-number" id="file-myfhtnrgb-L157" rel="file-myfhtnrgb-L157">157</span>
+            <span class="line-number" id="file-myfhtnrgb-L158" rel="file-myfhtnrgb-L158">158</span>
+            <span class="line-number" id="file-myfhtnrgb-L159" rel="file-myfhtnrgb-L159">159</span>
+            <span class="line-number" id="file-myfhtnrgb-L160" rel="file-myfhtnrgb-L160">160</span>
+            <span class="line-number" id="file-myfhtnrgb-L161" rel="file-myfhtnrgb-L161">161</span>
+            <span class="line-number" id="file-myfhtnrgb-L162" rel="file-myfhtnrgb-L162">162</span>
+            <span class="line-number" id="file-myfhtnrgb-L163" rel="file-myfhtnrgb-L163">163</span>
+            <span class="line-number" id="file-myfhtnrgb-L164" rel="file-myfhtnrgb-L164">164</span>
+            <span class="line-number" id="file-myfhtnrgb-L165" rel="file-myfhtnrgb-L165">165</span>
+            <span class="line-number" id="file-myfhtnrgb-L166" rel="file-myfhtnrgb-L166">166</span>
+            <span class="line-number" id="file-myfhtnrgb-L167" rel="file-myfhtnrgb-L167">167</span>
+            <span class="line-number" id="file-myfhtnrgb-L168" rel="file-myfhtnrgb-L168">168</span>
+            <span class="line-number" id="file-myfhtnrgb-L169" rel="file-myfhtnrgb-L169">169</span>
+            <span class="line-number" id="file-myfhtnrgb-L170" rel="file-myfhtnrgb-L170">170</span>
+            <span class="line-number" id="file-myfhtnrgb-L171" rel="file-myfhtnrgb-L171">171</span>
+            <span class="line-number" id="file-myfhtnrgb-L172" rel="file-myfhtnrgb-L172">172</span>
+            <span class="line-number" id="file-myfhtnrgb-L173" rel="file-myfhtnrgb-L173">173</span>
+            <span class="line-number" id="file-myfhtnrgb-L174" rel="file-myfhtnrgb-L174">174</span>
+            <span class="line-number" id="file-myfhtnrgb-L175" rel="file-myfhtnrgb-L175">175</span>
+            <span class="line-number" id="file-myfhtnrgb-L176" rel="file-myfhtnrgb-L176">176</span>
+            <span class="line-number" id="file-myfhtnrgb-L177" rel="file-myfhtnrgb-L177">177</span>
+            <span class="line-number" id="file-myfhtnrgb-L178" rel="file-myfhtnrgb-L178">178</span>
+            <span class="line-number" id="file-myfhtnrgb-L179" rel="file-myfhtnrgb-L179">179</span>
+            <span class="line-number" id="file-myfhtnrgb-L180" rel="file-myfhtnrgb-L180">180</span>
+            <span class="line-number" id="file-myfhtnrgb-L181" rel="file-myfhtnrgb-L181">181</span>
+            <span class="line-number" id="file-myfhtnrgb-L182" rel="file-myfhtnrgb-L182">182</span>
+            <span class="line-number" id="file-myfhtnrgb-L183" rel="file-myfhtnrgb-L183">183</span>
+            <span class="line-number" id="file-myfhtnrgb-L184" rel="file-myfhtnrgb-L184">184</span>
+            <span class="line-number" id="file-myfhtnrgb-L185" rel="file-myfhtnrgb-L185">185</span>
+            <span class="line-number" id="file-myfhtnrgb-L186" rel="file-myfhtnrgb-L186">186</span>
+            <span class="line-number" id="file-myfhtnrgb-L187" rel="file-myfhtnrgb-L187">187</span>
+            <span class="line-number" id="file-myfhtnrgb-L188" rel="file-myfhtnrgb-L188">188</span>
+            <span class="line-number" id="file-myfhtnrgb-L189" rel="file-myfhtnrgb-L189">189</span>
+            <span class="line-number" id="file-myfhtnrgb-L190" rel="file-myfhtnrgb-L190">190</span>
+            <span class="line-number" id="file-myfhtnrgb-L191" rel="file-myfhtnrgb-L191">191</span>
+            <span class="line-number" id="file-myfhtnrgb-L192" rel="file-myfhtnrgb-L192">192</span>
+            <span class="line-number" id="file-myfhtnrgb-L193" rel="file-myfhtnrgb-L193">193</span>
+            <span class="line-number" id="file-myfhtnrgb-L194" rel="file-myfhtnrgb-L194">194</span>
+            <span class="line-number" id="file-myfhtnrgb-L195" rel="file-myfhtnrgb-L195">195</span>
+            <span class="line-number" id="file-myfhtnrgb-L196" rel="file-myfhtnrgb-L196">196</span>
+            <span class="line-number" id="file-myfhtnrgb-L197" rel="file-myfhtnrgb-L197">197</span>
+            <span class="line-number" id="file-myfhtnrgb-L198" rel="file-myfhtnrgb-L198">198</span>
+            <span class="line-number" id="file-myfhtnrgb-L199" rel="file-myfhtnrgb-L199">199</span>
+            <span class="line-number" id="file-myfhtnrgb-L200" rel="file-myfhtnrgb-L200">200</span>
+            <span class="line-number" id="file-myfhtnrgb-L201" rel="file-myfhtnrgb-L201">201</span>
+            <span class="line-number" id="file-myfhtnrgb-L202" rel="file-myfhtnrgb-L202">202</span>
+            <span class="line-number" id="file-myfhtnrgb-L203" rel="file-myfhtnrgb-L203">203</span>
+            <span class="line-number" id="file-myfhtnrgb-L204" rel="file-myfhtnrgb-L204">204</span>
+            <span class="line-number" id="file-myfhtnrgb-L205" rel="file-myfhtnrgb-L205">205</span>
+            <span class="line-number" id="file-myfhtnrgb-L206" rel="file-myfhtnrgb-L206">206</span>
+            <span class="line-number" id="file-myfhtnrgb-L207" rel="file-myfhtnrgb-L207">207</span>
+            <span class="line-number" id="file-myfhtnrgb-L208" rel="file-myfhtnrgb-L208">208</span>
+            <span class="line-number" id="file-myfhtnrgb-L209" rel="file-myfhtnrgb-L209">209</span>
+            <span class="line-number" id="file-myfhtnrgb-L210" rel="file-myfhtnrgb-L210">210</span>
+            <span class="line-number" id="file-myfhtnrgb-L211" rel="file-myfhtnrgb-L211">211</span>
+            <span class="line-number" id="file-myfhtnrgb-L212" rel="file-myfhtnrgb-L212">212</span>
+            <span class="line-number" id="file-myfhtnrgb-L213" rel="file-myfhtnrgb-L213">213</span>
+            <span class="line-number" id="file-myfhtnrgb-L214" rel="file-myfhtnrgb-L214">214</span>
+            <span class="line-number" id="file-myfhtnrgb-L215" rel="file-myfhtnrgb-L215">215</span>
+            <span class="line-number" id="file-myfhtnrgb-L216" rel="file-myfhtnrgb-L216">216</span>
+            <span class="line-number" id="file-myfhtnrgb-L217" rel="file-myfhtnrgb-L217">217</span>
+            <span class="line-number" id="file-myfhtnrgb-L218" rel="file-myfhtnrgb-L218">218</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-myfhtnrgb-LC1">/*
+</div><div class="line" id="file-myfhtnrgb-LC2">fht_adc.pde
+</div><div class="line" id="file-myfhtnrgb-LC3">guest openmusiclabs.com 9.5.12
+</div><div class="line" id="file-myfhtnrgb-LC4">example sketch for testing the fht library.
+</div><div class="line" id="file-myfhtnrgb-LC5">it takes in data on ADC0 (Analog0) and processes them
+</div><div class="line" id="file-myfhtnrgb-LC6">with the fht. the data is sent out over the serial
+</div><div class="line" id="file-myfhtnrgb-LC7">port at 115.2kb.  there is a pure data patch for
+</div><div class="line" id="file-myfhtnrgb-LC8">visualizing the data.
+</div><div class="line" id="file-myfhtnrgb-LC9">*/
+</div><div class="line" id="file-myfhtnrgb-LC10">//shin: mod with mapping of rgb to frequency
+</div><div class="line" id="file-myfhtnrgb-LC11">//how-to guide: http://shin-ajaran.blogspot.sg/2014/11/arduino-spectrum-analyzer-for-music-to.html
+</div><div class="line" id="file-myfhtnrgb-LC12">#define LOG_OUT 1 // use the log output function
+</div><div class="line" id="file-myfhtnrgb-LC13">#define FHT_N 256 // set to 256 point fht
+</div><div class="line" id="file-myfhtnrgb-LC14">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC15">#include &lt;FHT.h&gt; // include the library
+</div><div class="line" id="file-myfhtnrgb-LC16">//shin: common anode RGB connected to pin3,4,5,6; A0 is eletctret amplifier output
+</div><div class="line" id="file-myfhtnrgb-LC17">int ledG = 5;//pwm
+</div><div class="line" id="file-myfhtnrgb-LC18">int ledA = 4;//anode. pull high  
+</div><div class="line" id="file-myfhtnrgb-LC19">int ledR = 3;//pwm
+</div><div class="line" id="file-myfhtnrgb-LC20">int ledB = 6;//pwm
+</div><div class="line" id="file-myfhtnrgb-LC21">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC22">//3 chn select at deliberate
+</div><div class="line" id="file-myfhtnrgb-LC23">int chnLow = 8;
+</div><div class="line" id="file-myfhtnrgb-LC24">int chnMid = 12;
+</div><div class="line" id="file-myfhtnrgb-LC25">int chnHigh = 28;
+</div><div class="line" id="file-myfhtnrgb-LC26">  
+</div><div class="line" id="file-myfhtnrgb-LC27">//max val
+</div><div class="line" id="file-myfhtnrgb-LC28">int valMin = 0;
+</div><div class="line" id="file-myfhtnrgb-LC29">int valMax = 190;  
+</div><div class="line" id="file-myfhtnrgb-LC30">//bias to reduce on low and increase on high  
+</div><div class="line" id="file-myfhtnrgb-LC31">int bias = 0;//+- bias to output
+</div><div class="line" id="file-myfhtnrgb-LC32">int valW=0;
+</div><div class="line" id="file-myfhtnrgb-LC33">//low pass then avg the 3 grp  
+</div><div class="line" id="file-myfhtnrgb-LC34">uint16_t tempLow = 0;
+</div><div class="line" id="file-myfhtnrgb-LC35">uint16_t tempMid = 0;
+</div><div class="line" id="file-myfhtnrgb-LC36">uint16_t tempHigh = 0;
+</div><div class="line" id="file-myfhtnrgb-LC37"> 
+</div><div class="line" id="file-myfhtnrgb-LC38">void setup() {
+</div><div class="line" id="file-myfhtnrgb-LC39">  Serial.begin(115200); // use the serial port
+</div><div class="line" id="file-myfhtnrgb-LC40">  TIMSK0 = 0; // turn off timer0 for lower jitter
+</div><div class="line" id="file-myfhtnrgb-LC41">  ADCSRA = 0xe5; // set the adc to free running mode
+</div><div class="line" id="file-myfhtnrgb-LC42">  ADMUX = 0x40; // use adc0 as A0
+</div><div class="line" id="file-myfhtnrgb-LC43">  DIDR0 = 0x01; // turn off the digital input for adc0
+</div><div class="line" id="file-myfhtnrgb-LC44">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC45">  pinMode(ledR, OUTPUT);
+</div><div class="line" id="file-myfhtnrgb-LC46">  pinMode(ledA, OUTPUT);
+</div><div class="line" id="file-myfhtnrgb-LC47">  pinMode(ledG, OUTPUT);
+</div><div class="line" id="file-myfhtnrgb-LC48">  pinMode(ledB, OUTPUT);
+</div><div class="line" id="file-myfhtnrgb-LC49">   //diagnostic led
+</div><div class="line" id="file-myfhtnrgb-LC50">   diagLed();   
+</div><div class="line" id="file-myfhtnrgb-LC51">} 
+</div><div class="line" id="file-myfhtnrgb-LC52">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC53">void loop() {
+</div><div class="line" id="file-myfhtnrgb-LC54">   //bias
+</div><div class="line" id="file-myfhtnrgb-LC55">   randomSeed(ADMUX);
+</div><div class="line" id="file-myfhtnrgb-LC56">   bias = random(70,150);
+</div><div class="line" id="file-myfhtnrgb-LC57">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC58">  while(1) { // reduces jitter
+</div><div class="line" id="file-myfhtnrgb-LC59">	 
+</div><div class="line" id="file-myfhtnrgb-LC60">    cli();  // UDRE interrupt slows this way down on arduino1.0
+</div><div class="line" id="file-myfhtnrgb-LC61">    for (int i = 0 ; i &lt; FHT_N ; i++) { // save 256 samples
+</div><div class="line" id="file-myfhtnrgb-LC62">      while(!(ADCSRA &amp; 0x10)); // wait for adc to be ready
+</div><div class="line" id="file-myfhtnrgb-LC63">      ADCSRA = 0xf5; // restart adc
+</div><div class="line" id="file-myfhtnrgb-LC64">      byte m = ADCL; // fetch adc data
+</div><div class="line" id="file-myfhtnrgb-LC65">      byte j = ADCH;
+</div><div class="line" id="file-myfhtnrgb-LC66">      int k = (j &lt;&lt; 8) | m; // form into an int
+</div><div class="line" id="file-myfhtnrgb-LC67">      k -= 0x0200; // form into a signed int
+</div><div class="line" id="file-myfhtnrgb-LC68">      k &lt;&lt;= 6; // form into a 16b signed int
+</div><div class="line" id="file-myfhtnrgb-LC69">      fht_input[i] = k; // put real data into bins
+</div><div class="line" id="file-myfhtnrgb-LC70">    }
+</div><div class="line" id="file-myfhtnrgb-LC71">    fht_window(); // window the data for better frequency response
+</div><div class="line" id="file-myfhtnrgb-LC72">    fht_reorder(); // reorder the data before doing the fht
+</div><div class="line" id="file-myfhtnrgb-LC73">    fht_run(); // process the data in the fht
+</div><div class="line" id="file-myfhtnrgb-LC74">    fht_mag_log(); // take the output of the fht; formula =16*(log^2((img^2 + real^2)^1/2))
+</div><div class="line" id="file-myfhtnrgb-LC75">    sei();
+</div><div class="line" id="file-myfhtnrgb-LC76">    Serial.write(255); // send a start byte
+</div><div class="line" id="file-myfhtnrgb-LC77">    Serial.write(fht_log_out, FHT_N/2); // send out the data; FHT_N/2 contains # of chn
+</div><div class="line" id="file-myfhtnrgb-LC78">    
+</div><div class="line" id="file-myfhtnrgb-LC79">	
+</div><div class="line" id="file-myfhtnrgb-LC80">    //shin: chuck 128chn amplitude to RGB spectrum
+</div><div class="line" id="file-myfhtnrgb-LC81">    //style1: chuck chn low,mid,high to R,G,B
+</div><div class="line" id="file-myfhtnrgb-LC82">  
+</div><div class="line" id="file-myfhtnrgb-LC83">    //triChn(0);//no bias    
+</div><div class="line" id="file-myfhtnrgb-LC84">    triChn(bias);//with rnd bias
+</div><div class="line" id="file-myfhtnrgb-LC85">	
+</div><div class="line" id="file-myfhtnrgb-LC86">	//style2: avg 20chn within low, mid, high band
+</div><div class="line" id="file-myfhtnrgb-LC87">	//grpChnLowPass();
+</div><div class="line" id="file-myfhtnrgb-LC88">	
+</div><div class="line" id="file-myfhtnrgb-LC89">	//style3: threshold chn low=blue, mid green, high red; 
+</div><div class="line" id="file-myfhtnrgb-LC90">	//treshChn();
+</div><div class="line" id="file-myfhtnrgb-LC91">  }//end while
+</div><div class="line" id="file-myfhtnrgb-LC92">}//loop
+</div><div class="line" id="file-myfhtnrgb-LC93">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC94">void diagLed(){
+</div><div class="line" id="file-myfhtnrgb-LC95">    //on rgb led blue light
+</div><div class="line" id="file-myfhtnrgb-LC96">	digitalWrite(ledA,HIGH);
+</div><div class="line" id="file-myfhtnrgb-LC97">	analogWrite(ledR, 0);
+</div><div class="line" id="file-myfhtnrgb-LC98">    analogWrite(ledG, 255);
+</div><div class="line" id="file-myfhtnrgb-LC99">    analogWrite(ledB, 255);
+</div><div class="line" id="file-myfhtnrgb-LC100">	delay(1000);
+</div><div class="line" id="file-myfhtnrgb-LC101">	digitalWrite(ledA,LOW);
+</div><div class="line" id="file-myfhtnrgb-LC102">            delay(1000);
+</div><div class="line" id="file-myfhtnrgb-LC103">        digitalWrite(ledA,HIGH);
+</div><div class="line" id="file-myfhtnrgb-LC104">	analogWrite(ledR, 255);
+</div><div class="line" id="file-myfhtnrgb-LC105">    analogWrite(ledG, 0);
+</div><div class="line" id="file-myfhtnrgb-LC106">    analogWrite(ledB, 255);
+</div><div class="line" id="file-myfhtnrgb-LC107">    	delay(1000);
+</div><div class="line" id="file-myfhtnrgb-LC108">	digitalWrite(ledA,LOW);
+</div><div class="line" id="file-myfhtnrgb-LC109">            delay(1000);
+</div><div class="line" id="file-myfhtnrgb-LC110">	digitalWrite(ledA,HIGH);
+</div><div class="line" id="file-myfhtnrgb-LC111">	analogWrite(ledR, 255);
+</div><div class="line" id="file-myfhtnrgb-LC112">    analogWrite(ledG, 255);
+</div><div class="line" id="file-myfhtnrgb-LC113">    analogWrite(ledB, 0);
+</div><div class="line" id="file-myfhtnrgb-LC114">	delay(1000);
+</div><div class="line" id="file-myfhtnrgb-LC115">}//end diagLed
+</div><div class="line" id="file-myfhtnrgb-LC116">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC117">void triChn(int bias){//read low, mid, high chn
+</div><div class="line" id="file-myfhtnrgb-LC118">    fht_log_out[chnLow] = map(fht_log_out[chnLow], valMin, valMax, 0, 255); //low
+</div><div class="line" id="file-myfhtnrgb-LC119">    fht_log_out[chnMid] = map(fht_log_out[chnMid], valMin, valMax, 0, 255); //mid
+</div><div class="line" id="file-myfhtnrgb-LC120">    fht_log_out[chnHigh] = map(fht_log_out[chnHigh], valMin, valMax, 0, 255); //high
+</div><div class="line" id="file-myfhtnrgb-LC121">	//with bias
+</div><div class="line" id="file-myfhtnrgb-LC122">    
+</div><div class="line" id="file-myfhtnrgb-LC123">    analogWrite(ledB, fht_log_out[chnLow]);
+</div><div class="line" id="file-myfhtnrgb-LC124">    analogWrite(ledG, fht_log_out[chnMid]-bias);
+</div><div class="line" id="file-myfhtnrgb-LC125">    analogWrite(ledR, fht_log_out[chnHigh]+bias);
+</div><div class="line" id="file-myfhtnrgb-LC126">}
+</div><div class="line" id="file-myfhtnrgb-LC127">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC128">void grpChnLowPass(){//grp low pas 60 out of 128 chn into grp of low mid high, avg out in grp
+</div><div class="line" id="file-myfhtnrgb-LC129">  int numChn = 12;
+</div><div class="line" id="file-myfhtnrgb-LC130">  for (int i=0; i&lt;numChn; i++) { //i = 256/8 = 32 bins of 8
+</div><div class="line" id="file-myfhtnrgb-LC131">  //low chn 
+</div><div class="line" id="file-myfhtnrgb-LC132">  tempLow=fht_log_out[i]+tempLow;
+</div><div class="line" id="file-myfhtnrgb-LC133">  //mid chn
+</div><div class="line" id="file-myfhtnrgb-LC134">  tempMid=fht_log_out[(i+11)]+tempMid;
+</div><div class="line" id="file-myfhtnrgb-LC135">  //high chn
+</div><div class="line" id="file-myfhtnrgb-LC136">  tempHigh=fht_log_out[i+21]+tempHigh;
+</div><div class="line" id="file-myfhtnrgb-LC137">  }//end for
+</div><div class="line" id="file-myfhtnrgb-LC138">	//avg across the grp  
+</div><div class="line" id="file-myfhtnrgb-LC139">	tempLow = tempLow / numChn;  
+</div><div class="line" id="file-myfhtnrgb-LC140">	tempMid = tempMid / numChn;
+</div><div class="line" id="file-myfhtnrgb-LC141">	tempHigh = tempHigh / numChn;
+</div><div class="line" id="file-myfhtnrgb-LC142">	//map freq to rgb on  pwm pin
+</div><div class="line" id="file-myfhtnrgb-LC143">    tempLow = map(tempLow, valMin, valMax, 0, 255);
+</div><div class="line" id="file-myfhtnrgb-LC144">	tempMid = map(tempMid, valMin, valMax, 0, 255);
+</div><div class="line" id="file-myfhtnrgb-LC145">	tempHigh = map(tempHigh, valMin, valMax, 0, 255);
+</div><div class="line" id="file-myfhtnrgb-LC146">	//output to rgb
+</div><div class="line" id="file-myfhtnrgb-LC147">	analogWrite(ledB, tempLow);
+</div><div class="line" id="file-myfhtnrgb-LC148">    analogWrite(ledG, tempMid);
+</div><div class="line" id="file-myfhtnrgb-LC149">    analogWrite(ledR, tempHigh);
+</div><div class="line" id="file-myfhtnrgb-LC150">	
+</div><div class="line" id="file-myfhtnrgb-LC151">	//output with fade effect1
+</div><div class="line" id="file-myfhtnrgb-LC152">	//fadePin1(ledB, tempLow);
+</div><div class="line" id="file-myfhtnrgb-LC153">	//fadePin1(ledG, tempMid);
+</div><div class="line" id="file-myfhtnrgb-LC154">	//fadePin1(ledR, tempHigh);
+</div><div class="line" id="file-myfhtnrgb-LC155">	
+</div><div class="line" id="file-myfhtnrgb-LC156">    //output with fade effect2
+</div><div class="line" id="file-myfhtnrgb-LC157">	//fadePin2(ledB, ledG, ledR, tempHigh);
+</div><div class="line" id="file-myfhtnrgb-LC158">	
+</div><div class="line" id="file-myfhtnrgb-LC159">}//grpChnLowPass
+</div><div class="line" id="file-myfhtnrgb-LC160">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC161">void treshChn(){//on if over threshold low, mid, high
+</div><div class="line" id="file-myfhtnrgb-LC162">    if(fht_log_out[chnLow]&gt;150){
+</div><div class="line" id="file-myfhtnrgb-LC163">	analogWrite(ledB, 0);
+</div><div class="line" id="file-myfhtnrgb-LC164">    analogWrite(ledG, 255);
+</div><div class="line" id="file-myfhtnrgb-LC165">    analogWrite(ledR, 255);
+</div><div class="line" id="file-myfhtnrgb-LC166">	delay(50);
+</div><div class="line" id="file-myfhtnrgb-LC167">	}
+</div><div class="line" id="file-myfhtnrgb-LC168">	
+</div><div class="line" id="file-myfhtnrgb-LC169">	else if(fht_log_out[chnHigh]&gt;50){
+</div><div class="line" id="file-myfhtnrgb-LC170">	analogWrite(ledB, 255);
+</div><div class="line" id="file-myfhtnrgb-LC171">    analogWrite(ledG, 255);
+</div><div class="line" id="file-myfhtnrgb-LC172">    analogWrite(ledR, 0);
+</div><div class="line" id="file-myfhtnrgb-LC173">	delay(50);
+</div><div class="line" id="file-myfhtnrgb-LC174">	}
+</div><div class="line" id="file-myfhtnrgb-LC175">	
+</div><div class="line" id="file-myfhtnrgb-LC176">    else if(fht_log_out[chnMid&gt;110]){
+</div><div class="line" id="file-myfhtnrgb-LC177">	analogWrite(ledB, 255);
+</div><div class="line" id="file-myfhtnrgb-LC178">    analogWrite(ledG, 0);
+</div><div class="line" id="file-myfhtnrgb-LC179">    analogWrite(ledR, 255);
+</div><div class="line" id="file-myfhtnrgb-LC180">	delay(50);
+</div><div class="line" id="file-myfhtnrgb-LC181">	}
+</div><div class="line" id="file-myfhtnrgb-LC182">    
+</div><div class="line" id="file-myfhtnrgb-LC183">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC184">	else{
+</div><div class="line" id="file-myfhtnrgb-LC185">    randomSeed(ADMUX);
+</div><div class="line" id="file-myfhtnrgb-LC186">	
+</div><div class="line" id="file-myfhtnrgb-LC187">    valW = random(0,255);
+</div><div class="line" id="file-myfhtnrgb-LC188">	analogWrite(ledB, valW);
+</div><div class="line" id="file-myfhtnrgb-LC189">	valW = random(0,255);
+</div><div class="line" id="file-myfhtnrgb-LC190">    analogWrite(ledG, valW);
+</div><div class="line" id="file-myfhtnrgb-LC191">	valW = random(0,255);
+</div><div class="line" id="file-myfhtnrgb-LC192">    analogWrite(ledR, valW);
+</div><div class="line" id="file-myfhtnrgb-LC193">	delay(100);
+</div><div class="line" id="file-myfhtnrgb-LC194">	}
+</div><div class="line" id="file-myfhtnrgb-LC195">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC196">}//end treshChn
+</div><div class="line" id="file-myfhtnrgb-LC197">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC198">void fadePin1(int ledPin, int sFade){
+</div><div class="line" id="file-myfhtnrgb-LC199">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC200">for(int fadeValue = sFade ; fadeValue &gt; 1; fadeValue -=5) { 
+</div><div class="line" id="file-myfhtnrgb-LC201">    // sets the value (range from 0 to 255):
+</div><div class="line" id="file-myfhtnrgb-LC202">    analogWrite(ledPin, fadeValue);         
+</div><div class="line" id="file-myfhtnrgb-LC203">    // wait for 30 milliseconds to see the dimming effect    
+</div><div class="line" id="file-myfhtnrgb-LC204">    delay(30);                            
+</div><div class="line" id="file-myfhtnrgb-LC205">  } 
+</div><div class="line" id="file-myfhtnrgb-LC206">}//end fadePin1
+</div><div class="line" id="file-myfhtnrgb-LC207">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC208">void fadePin2(int ledPinR,int ledPinG,int ledPinB, int sFade){
+</div><div class="line" id="file-myfhtnrgb-LC209">&nbsp;
+</div><div class="line" id="file-myfhtnrgb-LC210">for(int fadeValue = sFade ; fadeValue &gt; 1; fadeValue -=5) { 
+</div><div class="line" id="file-myfhtnrgb-LC211">    // sets the value (range from 0 to 255):
+</div><div class="line" id="file-myfhtnrgb-LC212">    analogWrite(ledPinR, fadeValue);
+</div><div class="line" id="file-myfhtnrgb-LC213">	analogWrite(ledPinG, fadeValue); 
+</div><div class="line" id="file-myfhtnrgb-LC214">	analogWrite(ledPinB, fadeValue); 	
+</div><div class="line" id="file-myfhtnrgb-LC215">    // wait for 30 milliseconds to see the dimming effect    
+</div><div class="line" id="file-myfhtnrgb-LC216">    delay(30);                            
+</div><div class="line" id="file-myfhtnrgb-LC217">  } 
+</div><div class="line" id="file-myfhtnrgb-LC218">}//end fadePin
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/teos0009/6e54aff7e3d236d17ac4/raw/myFHTnRGB" style="float:right">view raw</a>
+            <a href="https://gist.github.com/teos0009/6e54aff7e3d236d17ac4#file-myfhtnrgb">myFHTnRGB</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+<br>
+<br>
+Observations<br>
+No matter what are the music played during experimentation, it seems that the genre of the music maps to the corresponding biased group of frequency bands. Assuming the frequency bands are colour mapped eg blue for low, green for mid, red for high, definitely techno is going to appear more blue than red, and the counterexample eg opera is going to appear more red than blue. So the big Q: Which recipe for mapping of frequency to colour is "the best"? For this, yours truly don't have an answer, yet. It seems appreciating changing colour visually may differ from human to human.<br>
+<br>
+Nonetheless, FHT is a really responsive algorithm implemented on Arduino. Check out the demo video below reacting to human voice.<br>
+<br>
+Interested to pick up where I left? ping me!~~~~<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="https://i.ytimg.com/vi/pBIfbgwZ6sc/0.jpg" height="266" style="clear: left; float: left;" width="320"><param name="movie" value="https://www.youtube.com/v/pBIfbgwZ6sc?version=3&amp;f=user_uploads&amp;c=google-webdrive-0&amp;app=youtube_gdata"><param name="bgcolor" value="#FFFFFF"><param name="allowFullScreen" value="true"><embed width="320" height="266" src="https://www.youtube.com/v/pBIfbgwZ6sc?version=3&amp;f=user_uploads&amp;c=google-webdrive-0&amp;app=youtube_gdata" type="application/x-shockwave-flash" allowfullscreen="true"></object></div>
+<br>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1"><span class="post-author vcard">
+Posted by
+<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<meta content="http://www.blogger.com/profile/09436569281310042987" itemprop="url">
+<a class="g-profile" href="http://www.blogger.com/profile/09436569281310042987" rel="author" title="author profile" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+<span itemprop="name">sjteo</span>
+</a>
+</span>
+</span>
+<span class="post-timestamp">
+at
+<meta content="http://shin-ajaran.blogspot.com/2014/11/arduino-spectrum-analyzer-for-music-to.html" itemprop="url">
+<a class="timestamp-link" href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED.html" rel="bookmark" title="permanent link"><abbr class="published" itemprop="datePublished" title="2014-11-09T17:40:00+08:00">5:40 PM</abbr></a>
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-control blog-admin pid-1310673337">
+<a href="http://www.blogger.com/post-edit.g?blogID=2137743283716015909&postID=2587632609301302402&from=pencil" title="Edit Post">
+<img alt="" class="icon-action" height="18" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/icon18_edit_allbkg.gif" width="18">
+</a>
+</span>
+</span>
+<span class="post-backlinks post-comment-link">
+</span>
+</div>
+<div class="post-footer-line post-footer-line-2"><span class="post-labels">
+Labels:
+<a href="http://shin-ajaran.blogspot.sg/search/label/arduino" rel="tag">arduino</a>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3"><span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>No comments:</h4>
+<div id="Blog1_comments-block-wrapper">
+<dl class="avatar-comment-indent" id="comments-block">
+</dl>
+</div>
+<p class="comment-footer">
+<a href="http://www.blogger.com/comment.g?blogID=2137743283716015909&postID=2587632609301302402" onclick="">Post a Comment</a>
+</p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container"><a name="links"></a><h4>Links to this post</h4>
+<p class="comment-footer">
+<a class="comment-link" href="http://www.blogger.com/blog-this.g" id="Blog1_backlinks-create-link" target="_blank">Create a Link</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- google_ad_section_end(name=default) -->
+<div class="inline-ad">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-0760899049596644";
+google_ad_host = "ca-host-pub-1556223355139109";
+google_ad_host_channel = "L0007";
+/* shin-ajaran_main_Blog1_300x250_as */
+google_ad_slot = "8637405252";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<!-- google_ad_section_start -->
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://shin-ajaran.blogspot.sg/2014/11/attiny85-spectrum-analyzer-for-music-to.html" id="Blog1_blog-pager-newer-link" title="Newer Post">Newer Post</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="http://shin-ajaran.blogspot.sg/2014/11/iot-inspired-multi-plug-modified-with.html" id="Blog1_blog-pager-older-link" title="Older Post">Older Post</a>
+</span>
+<a class="home-link" href="http://shin-ajaran.blogspot.sg/">Home</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Subscribe to:
+<a class="feed-link" href="http://shin-ajaran.blogspot.com/feeds/2587632609301302402/comments/default" target="_blank" type="application/atom+xml">Post Comments (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
+</div></div>
+</div>
+<div id="sidebar-wrapper">
+<div class="sidebar section" id="sidebar"><div class="widget Profile" id="Profile1">
+<h2>About Me</h2>
+<div class="widget-content">
+<a href="http://www.blogger.com/profile/09436569281310042987"><img alt="My Photo" class="profile-img" height="80" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/headshot.JPG" width="68"></a>
+<dl class="profile-datablock">
+<dt class="profile-data">
+<a class="profile-name-link g-profile" href="http://www.blogger.com/profile/09436569281310042987" rel="author" style="background-image: url(//www.blogger.com/img/logo-16.png);" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+sjteo
+</a>
+</dt>
+<dd class="profile-textblock">code monkey, hobbyist electrician, monkey wrench-ed grease monkey, plumber of leaks (mem/ACDC/H2O), carpenter, driver, baker, swimmer, troubleshooter, fat cat wannabe, code talker, risk taker, soul hacker.
+&amp;nbsp &amp;nbsp
+All written content released under GNU-GPL CopyLeft 
+http://www.gnu.org/copyleft/gpl.html</dd>
+</dl>
+<a class="profile-link" href="http://www.blogger.com/profile/09436569281310042987" rel="author">View my complete profile</a>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2137743283716015909&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Profile1&quot;));" target="configProfile1" title="Edit">
+<img alt="" height="18" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget CustomSearch" id="CustomSearch1">
+<h2 class="title">Search This Blog</h2>
+<div class="widget-content">
+<div id="CustomSearch1_form"><form class="gsc-search-box" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><input autocomplete="off" type="text" size="10" class=" gsc-input" name="search" title="search"><input type="hidden" name="bgresponse" id="bgresponse"></td><td class="gsc-search-button"><input type="submit" value="Search" class="gsc-search-button" title="search"></td></tr></tbody></table><table cellspacing="0" cellpadding="0" class="gsc-branding"><tbody><tr style="display: none;"><td class="gsc-branding-user-defined"></td><td class="gsc-branding-text"><div class="gsc-branding-text">powered by</div></td><td class="gsc-branding-img-noclear"><img src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/small-logo.png" class="gsc-branding-img-noclear"></td></tr></tbody></table></form></div>
+</div>
+<style type="text/css">
+      #uds-searchControl .gs-result .gs-title,
+      #uds-searchControl .gs-result .gs-title *,
+      #uds-searchControl .gsc-results .gsc-trailing-more-results,
+      #uds-searchControl .gsc-results .gsc-trailing-more-results * {
+        color:#2D8930;
+      }
+
+      #uds-searchControl .gs-result .gs-title a:visited,
+      #uds-searchControl .gs-result .gs-title a:visited * {
+        color:#2D8930;
+      }
+
+      #uds-searchControl .gs-relativePublishedDate,
+      #uds-searchControl .gs-publishedDate {
+        color: #999999;
+      }
+
+      #uds-searchControl .gs-result a.gs-visibleUrl,
+      #uds-searchControl .gs-result .gs-visibleUrl {
+        color: #2D8930;
+      }
+
+      #uds-searchControl .gsc-results {
+        border-color: #11593C;
+        background-color: #ffffcc;
+      }
+
+      #uds-searchControl .gsc-tabhActive {
+        border-color: #11593C;
+        border-top-color: #78B749;
+        background-color: #ffffcc;
+        color: #063E3F;
+      }
+
+      #uds-searchControl .gsc-tabhInactive {
+        border-color: #11593C;
+        background-color: transparent;
+        color: #2D8930;
+      }
+
+      #uds-searchClearResults {
+        border-color: #11593C;
+      }
+
+      #uds-searchClearResults:hover {
+        border-color: #78B749;
+      }
+
+      #uds-searchControl .gsc-cursor-page {
+        color: #2D8930;
+      }
+
+      #uds-searchControl .gsc-cursor-current-page {
+        color: #063E3F;
+      }
+    </style>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2137743283716015909&widgetType=CustomSearch&widgetId=CustomSearch1&action=editWidget&sectionId=sidebar" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;CustomSearch1&quot;));" target="configCustomSearch1" title="Edit">
+<img alt="" height="18" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget Label" id="Label1">
+<h2>Labels</h2>
+<div class="widget-content cloud-label-widget-content">
+<span class="label-size label-size-5">
+<a dir="ltr" href="http://shin-ajaran.blogspot.sg/search/label/arduino">arduino</a>
+<span class="label-count" dir="ltr">(43)</span>
+</span>
+<span class="label-size label-size-5">
+<a dir="ltr" href="http://shin-ajaran.blogspot.sg/search/label/programming">programming</a>
+<span class="label-count" dir="ltr">(39)</span>
+</span>
+<span class="label-size label-size-5">
+<a dir="ltr" href="http://shin-ajaran.blogspot.sg/search/label/DIY">DIY</a>
+<span class="label-count" dir="ltr">(31)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://shin-ajaran.blogspot.sg/search/label/cloud%20computing">cloud computing</a>
+<span class="label-count" dir="ltr">(9)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://shin-ajaran.blogspot.sg/search/label/java">java</a>
+<span class="label-count" dir="ltr">(7)</span>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://shin-ajaran.blogspot.sg/search/label/raspberry%20pi">raspberry pi</a>
+<span class="label-count" dir="ltr">(7)</span>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://shin-ajaran.blogspot.sg/search/label/linux">linux</a>
+<span class="label-count" dir="ltr">(4)</span>
+</span>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2137743283716015909&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Label1&quot;));" target="configLabel1" title="Edit">
+<img alt="" height="18" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BlogArchive" id="BlogArchive1">
+<h2>Blog Archive</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/search?updated-min=2015-01-01T00:00:00%2B08:00&updated-max=2016-01-01T00:00:00%2B08:00&max-results=5">2015</a>
+<span class="post-count" dir="ltr">(5)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2015_02_01_archive.html">February</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2015_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/search?updated-min=2014-01-01T00:00:00%2B08:00&updated-max=2015-01-01T00:00:00%2B08:00&max-results=27">2014</a>
+<span class="post-count" dir="ltr">(27)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_12_01_archive.html">December</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(2)</span>
+<ul class="posts">
+<li><a href="http://shin-ajaran.blogspot.sg/2014/11/attiny85-spectrum-analyzer-for-music-to.html">ATtiny85 spectrum analyzer for music to RGB LED wi...</a></li>
+<li><a href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED.html">Arduino spectrum analyzer for music to colourful l...</a></li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_10_01_archive.html">October</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_09_01_archive.html">September</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_07_01_archive.html">July</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_04_01_archive.html">April</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_03_01_archive.html">March</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_02_01_archive.html">February</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2014_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/search?updated-min=2013-01-01T00:00:00%2B08:00&updated-max=2014-01-01T00:00:00%2B08:00&max-results=34">2013</a>
+<span class="post-count" dir="ltr">(34)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2013_12_01_archive.html">December</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2013_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(8)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2013_10_01_archive.html">October</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2013_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(8)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2013_07_01_archive.html">July</a>
+<span class="post-count" dir="ltr">(7)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2013_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2013_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/search?updated-min=2012-01-01T00:00:00%2B08:00&updated-max=2013-01-01T00:00:00%2B08:00&max-results=22">2012</a>
+<span class="post-count" dir="ltr">(22)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2012_12_01_archive.html">December</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2012_10_01_archive.html">October</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2012_09_01_archive.html">September</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2012_07_01_archive.html">July</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2012_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2012_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2012_03_01_archive.html">March</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2012_02_01_archive.html">February</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2012_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/search?updated-min=2011-01-01T00:00:00%2B08:00&updated-max=2012-01-01T00:00:00%2B08:00&max-results=21">2011</a>
+<span class="post-count" dir="ltr">(21)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2011_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2011_10_01_archive.html">October</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2011_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2011_07_01_archive.html">July</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2011_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2011_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2011_02_01_archive.html">February</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2011_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(9)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/search?updated-min=2010-01-01T00:00:00%2B08:00&updated-max=2011-01-01T00:00:00%2B08:00&max-results=43">2010</a>
+<span class="post-count" dir="ltr">(43)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_12_01_archive.html">December</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(9)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_10_01_archive.html">October</a>
+<span class="post-count" dir="ltr">(9)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_09_01_archive.html">September</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_07_01_archive.html">July</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_04_01_archive.html">April</a>
+<span class="post-count" dir="ltr">(8)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_03_01_archive.html">March</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_02_01_archive.html">February</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2010_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/search?updated-min=2009-01-01T00:00:00%2B08:00&updated-max=2010-01-01T00:00:00%2B08:00&max-results=17">2009</a>
+<span class="post-count" dir="ltr">(17)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2009_12_01_archive.html">December</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2009_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2009_10_01_archive.html">October</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2009_09_01_archive.html">September</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2009_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2009_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2009_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2009_04_01_archive.html">April</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2009_02_01_archive.html">February</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/search?updated-min=2008-01-01T00:00:00%2B08:00&updated-max=2009-01-01T00:00:00%2B08:00&max-results=9">2008</a>
+<span class="post-count" dir="ltr">(9)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2008_12_01_archive.html">December</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2008_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2008_10_01_archive.html">October</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2008_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://shin-ajaran.blogspot.sg/2008_07_01_archive.html">July</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2137743283716015909&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;BlogArchive1&quot;));" target="configBlogArchive1" title="Edit">
+<img alt="" height="18" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BlogList" id="BlogList1">
+<h2 class="title">My Blog List</h2>
+<div class="widget-content">
+<div class="blog-list-container" id="BlogList1_container">
+<ul id="BlogList1_blogs">
+<li style="display: block;">
+<div class="blog-icon">
+<img data-lateloadsrc="http://cloudrangers.blogspot.com/favicon.ico" height="16" width="16" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/favicon.ico">
+</div>
+<div class="blog-content">
+<div class="blog-title">
+<a href="http://cloudrangers.blogspot.com/" target="_blank">
+Cloud Rangers</a>
+</div>
+<div class="item-content">
+<span class="item-title">
+<a href="http://cloudrangers.blogspot.com/2011/11/videos-running-cloud-applications-on.html" target="_blank">
+Videos: Running Cloud Applications on iPad</a>
+</span>
+<div class="item-time">
+3 years ago
+</div>
+</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li style="display: block;">
+<div class="blog-icon">
+<img data-lateloadsrc="http://diy-prt-segway.blogspot.com/favicon.ico" height="16" width="16" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/favicon(1).ico">
+</div>
+<div class="blog-content">
+<div class="blog-title">
+<a href="http://diy-prt-segway.blogspot.com/" target="_blank">
+Segway FYP</a>
+</div>
+<div class="item-content">
+<span class="item-title">
+<a href="http://diy-prt-segway.blogspot.com/2010/10/type-3-compact-design.html" target="_blank">
+Type 3 Compact Design</a>
+</span>
+<div class="item-time">
+4 years ago
+</div>
+</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li style="display: block;">
+<div class="blog-icon">
+<img data-lateloadsrc="http://jbyffyp.blogspot.com/favicon.ico" height="16" width="16" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/favicon(2).ico">
+</div>
+<div class="blog-content">
+<div class="blog-title">
+<a href="http://jbyffyp.blogspot.com/" target="_blank">
+Julian, Ben's and Yuan Feng's FYP Blog</a>
+</div>
+<div class="item-content">
+<span class="item-title">
+<a href="http://jbyffyp.blogspot.com/2009/11/so-much-to-do-so-much-to-see-so-much.html" target="_blank">
+So much to do, So much to see, So much more that give me the stress bees</a>
+</span>
+<div class="item-time">
+5 years ago
+</div>
+</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2137743283716015909&widgetType=BlogList&widgetId=BlogList1&action=editWidget&sectionId=sidebar" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;BlogList1&quot;));" target="configBlogList1" title="Edit">
+<img alt="" height="18" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div>
+</div><div class="widget Followers" id="Followers1">
+<h2 class="title">Followers</h2>
+<div class="widget-content">
+<div id="Followers1-wrapper">
+<div style="margin-right:2px;">
+<script type="text/javascript">
+        if (!window.google || !google.friendconnect) {
+          document.write('<script type="text/javascript"' +
+              'src="//www.google.com/friendconnect/script/friendconnect.js">' +
+              '</scr' + 'ipt>');
+        }
+      </script><script type="text/javascript" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/friendconnect.js"></script>
+<script type="text/javascript">
+      if (!window.registeredBloggerCallbacks) {
+        window.registeredBloggerCallbacks = true;
+
+        
+
+        
+        gadgets.rpc.register('requestReload', function() {
+          document.location.reload();
+        });
+
+        
+        gadgets.rpc.register('requestSignOut', function(siteId) {
+          
+          google.friendconnect.container.openSocialSiteId = siteId;
+          google.friendconnect.requestSignOut();
+        });
+      }
+    </script>
+<script type="text/javascript">
+    
+    function registerGetBlogUrls() {
+      gadgets.rpc.register('getBlogUrls', function() {
+        var holder = {};
+        
+          
+            
+            
+              holder.currentPost = "http://www.blogger.com/feeds/2137743283716015909/posts/default/2587632609301302402";
+            
+            
+            
+              holder.currentComments = "http://www.blogger.com/feeds/2137743283716015909/2587632609301302402/comments/default";
+            
+            holder.currentPostUrl = "";
+            holder.currentPostId = 2587632609301302402
+          
+          
+          
+            holder.postFeed = "http://www.blogger.com/feeds/2137743283716015909/posts/default";
+          
+          
+          
+            holder.commentFeed = "http://www.blogger.com/feeds/2137743283716015909/comments/default";
+          
+          holder.currentBlogUrl = "http://shin-ajaran.blogspot.com/";
+          holder.currentBlogId = "2137743283716015909";
+        
+        return holder;
+      });
+    }
+  </script>
+<script type="text/javascript">
+  if (!window.registeredCommonBloggerCallbacks) {
+    window.registeredCommonBloggerCallbacks = true;
+
+    gadgets.rpc.register('resize_iframe', function(height) {
+      var el = document.getElementById(this['f']);
+      if (el) {
+        el.style.height = height + 'px';
+      }
+    });
+
+    
+    gadgets.rpc.register('set_pref', function() {});
+
+    registerGetBlogUrls();
+  }
+  </script>
+<div id="div-rgyu9ls0q15m" style="width: 100%; visibility: visible;" class="gadgets-gadget-container"><div id="gfc_iframe_1192367604_0_body"><iframe id="gfc_iframe_1192367604_0" name="gfc_iframe_1192367604_0" style="width: 100%; height: 174px;" frameborder="0" scrolling="no" allowtransparency="true" height="260"></iframe></div></div>
+<script type="text/javascript">
+    var skin = {};
+    skin['FACE_SIZE'] = '32';
+    skin['HEIGHT'] = "260";
+    skin['TITLE'] = "Followers";
+    skin['BORDER_COLOR'] = "transparent";
+    skin['ENDCAP_BG_COLOR'] = "transparent";
+    skin['ENDCAP_TEXT_COLOR'] = "#063E3F";
+    skin['ENDCAP_LINK_COLOR'] = "#000000";
+    skin['ALTERNATE_BG_COLOR'] = "transparent";
+    
+    skin['CONTENT_BG_COLOR'] = "transparent";
+    skin['CONTENT_LINK_COLOR'] = "#000000";
+    skin['CONTENT_TEXT_COLOR'] = "#063E3F";
+    skin['CONTENT_SECONDARY_LINK_COLOR'] = "#FFFFFF";
+    skin['CONTENT_SECONDARY_TEXT_COLOR'] = "#000000";
+    skin['CONTENT_HEADLINE_COLOR'] = "#000000";
+    skin['FONT_FACE'] = "normal normal 130% Courier, monospace";
+    google.friendconnect.container.setParentUrl("/");
+    google.friendconnect.container["renderMembersGadget"](
+    {id: "div-rgyu9ls0q15m",
+     height: 260,
+     
+     
+     
+     site: "11590481388107065684",
+     
+     locale: 'en' },
+     skin);
+  </script>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2137743283716015909&widgetType=Followers&widgetId=Followers1&action=editWidget&sectionId=sidebar" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Followers1&quot;));" target="configFollowers1" title="Edit">
+<img alt="" height="18" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class="clear">&nbsp;</div>
+</div>
+<!-- end content-wrapper -->
+<div id="footer-wrapper">
+<div class="footer section" id="footer"></div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/3512243057-widgets.js"></script>
+<script type="text/javascript" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/jsapi"></script>
+<script type="text/javascript">
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '2137743283716015909';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d2137743283716015909','//shin-ajaran.blogspot.sg/2014/11/arduino-spectrum-analyzer-for-music-to.html','2137743283716015909');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '2137743283716015909', 'bloggerUrl': 'http://www.blogger.com', 'title': 'shinajaran', 'pageType': 'item', 'postId': '2587632609301302402', 'url': 'http://shin-ajaran.blogspot.sg/2014/11/arduino-spectrum-analyzer-for-music-to.html', 'canonicalUrl': 'http://shin-ajaran.blogspot.com/2014/11/arduino-spectrum-analyzer-for-music-to.html', 'canonicalHomepageUrl': 'http://shin-ajaran.blogspot.com/', 'homepageUrl': 'http://shin-ajaran.blogspot.sg/', 'blogspotFaviconUrl': 'http://shin-ajaran.blogspot.sg/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': '', 'searchLabel': '', 'searchQuery': '', 'pageName': 'Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED', 'pageTitle': 'shinajaran: Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42shinajaran - Atom\42 href\75\42http://shin-ajaran.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42shinajaran - RSS\42 href\75\42http://shin-ajaran.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42shinajaran - Atom\42 href\75\42http://www.blogger.com/feeds/2137743283716015909/posts/default\42 /\76\n\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42shinajaran - Atom\42 href\75\42http://shin-ajaran.blogspot.com/feeds/2587632609301302402/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'postImageUrl': 'https://scontent-b.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10553492_969529513062299_6014774526377597243_n.jpg?oh\75edf8ad509b8f88e46db52c4c3b618acc\46oe\07554D7906D', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var b\75window,f\75\42chrome\42,g\75\42tick\42,k\75\42jstiming\42;(function(){function d(a){this.t\75{};this.tick\75function(a,d,c){var e\75void 0!\75c?c:(new Date).getTime();this.t[a]\75[e,d];if(void 0\75\75c)try{b.console.timeStamp(\42CSI/\42+a)}catch(h){}};this[g](\42start\42,null,a)}var a;b.performance\46\46(a\75b.performance.timing);var n\75a?new d(a.responseStart):new d;b.jstiming\75{Timer:d,load:n};if(a){var c\75a.navigationStart,h\75a.responseStart;0\74c\46\46h\76\75c\46\46(b[k].srt\75h-c)}if(a){var e\75b[k].load;0\74c\46\46h\76\75c\46\46(e[g](\42_wtsrt\42,void 0,c),e[g](\42wtsrt_\42,\42_wtsrt\42,h),e[g](\42tbsd_\42,\42wtsrt_\42))}try{a\75null,\nb[f]\46\46b[f].csi\46\46(a\75Math.floor(b[f].csi().pageT),e\46\0460\74c\46\46(e[g](\42_tbnd\42,void 0,b[f].csi().startE),e[g](\42tbnd_\42,\42_tbnd\42,c))),null\75\75a\46\46b.gtbExternal\46\46(a\75b.gtbExternal.pageT()),null\75\75a\46\46b.external\46\46(a\75b.external.pageT,e\46\0460\74c\46\46(e[g](\42_tbnd\42,void 0,b.external.startE),e[g](\42tbnd_\42,\42_tbnd\42,c))),a\46\46(b[k].pt\75a)}catch(p){}})();b.tickAboveFold\75function(d){var a\0750;if(d.offsetParent){do a+\75d.offsetTop;while(d\75d.offsetParent)}d\75a;750\76\75d\46\46b[k].load[g](\42aft\42)};var l\75!1;function m(){l||(l\75!0,b[k].load[g](\42firstScrollTime\42))}b.addEventListener?b.addEventListener(\42scroll\42,m,!1):b.attachEvent(\42onscroll\42,m);\n })();\74/script\076', 'mobileHeadScript': '', 'adsenseClientId': 'ca-pub-0760899049596644', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/76f25a6f2e06af76', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sf': 'n', 'tf': ''}}, {'name': 'skin', 'data': {'vars': {'textColor': '#063E3F', 'linkColor': '#2D8930', 'borderColor': '#11593C', 'headerTextColor': '#ffffff', 'mainBgColor': '#ffffcc', 'sidebarTitleTextColor': '#1B703A', 'bgColor': '#ffffcc', 'headerCornersColor': '#11593C', 'headerFont': 'normal normal 210% Verdana, Arial, Sans-serif;', 'sidebarTitleBgColor': '#78B749', 'bodyFont': 'normal normal 130% Courier, monospace', 'dateHeaderColor': '#999999', 'endSide': 'right', 'startSide': 'left', 'headerBgColor': '#78B749'}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '2587632609301302402', 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/3586692752-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/2392111094-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_CustomSearchView', new _WidgetInfo('CustomSearch1', 'sidebar', null, document.getElementById('CustomSearch1'), {'title': 'Search This Blog', 'includeBlog': true, 'includePostLinks': true, 'includeWeb': true, 'linkLists': [], 'blogUrl': 'http://shin-ajaran.blogspot.com/', 'loadingMsg': 'Loading...', 'thisBlogMsg': 'This Blog', 'linkedFromHereMsg': 'Linked From Here', 'theWebMsg': 'The Web', 'backgroundColor': '#ffffcc', 'textColor': '#063E3F', 'dateColor': '#999999', 'linkColor': '#2D8930', 'urlColor': '#2D8930', 'visitedLinkColor': '#2D8930', 'borderColor': '#11593C', 'activeBorderColor': '#78B749', 'cse_ua': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogListView', new _WidgetInfo('BlogList1', 'sidebar', null, document.getElementById('BlogList1'), {'numItemsToShow': 0, 'totalItems': 3}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_FollowersView', new _WidgetInfo('Followers1', 'sidebar', null, document.getElementById('Followers1'), {}, 'displayModeFull'));
+</script>
+
+<span style="height: 20px; width: 40px; min-height: 20px; min-width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=);"></span><link type="text/css" rel="stylesheet" href="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/2392111094-lightbox_bundle.css"><script type="text/javascript" src="./shinajaran  Arduino spectrum analyzer for music to colourful lighting using FHT and RGB LED_files/3586692752-lbx.js"></script></body></html>

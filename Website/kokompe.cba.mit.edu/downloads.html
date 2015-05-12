@@ -1,0 +1,115 @@
+<html>
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>kokompe downloads</title>
+        <link rel="stylesheet" href="http://kokompe.cba.mit.edu/fab.css">
+    </head>
+    <body>
+    <div id="page">
+        <div id="header">
+            <a href="index.html"><h1>Fab Modules</h1></a>
+            <h2>downloads<h2>
+        </div>
+
+
+        <div id="main" class="itemview">
+
+            <h3>Development snapshot</h3>
+            (Snapshot from July 31, 2014, 02:51PM)
+
+            <h4>All Modules</h4>
+            <p><a href="http://kokompe.cba.mit.edu/fab_src.zip">Download</a><br>
+            (includes path planning, machine output and design GUIs)
+            
+            <h4>Design UI</h4>
+            <p>The kokopelli design UI is now hosted on Github, separately from the rest of the fab modules.
+            <p>Check out the repository <a href="https://github.com/mkeeter/kokopelli">here</a>,
+            or download a <a href="http://tmp.cba.mit.edu/web/mkeeter/kokopelli.zip">Mac application</a>.
+
+            <h3>Dependencies: Ubuntu 12.04</h3>
+            <p>
+            <a href="http://www.python.org/">Python</a><br>
+            <a href="http://www.wxpython.org/">wxPython</a><br>
+            <a href="http://www.numpy.org/">NumPy</a><br>
+            <a href="http://gcc.gnu.org/">GCC and G++</a><br>
+            <a href="http://www.libpng.org/pub/png/libpng.html">libpng</a><br>
+            <a href="http://giflib.sourceforge.net/">GIFLIB</a><br>
+            <a href="http://www.gnu.org/software/make/">Make</a><br>
+            <a href="http://www.gnu.org/software/bash/">BASH</a><br>
+            <a href="http://okular.kde.org/">Okular</a><br>
+            <a href="http://www.boost.org/">Boost</a> (headers, thread, and system library)<br>
+            <a href="http://www.cmake.org/">cmake</a><br>
+            <p>You can install all of the dependencies with the command:<br>
+            <code>sudo apt-get install python python-wxgtk2.8 python-dev python-pip gcc g++ libpng12-dev libgif-dev make bash okular libboost-thread-dev libboost-system-dev cmake</code><br>
+            <p>
+
+            <p>
+
+            <h3>Dependencies: Mac OSX</h3>
+            <!--
+            <h4>Experimental Installer</h4>
+            <p>We've recently developed a simple script that walks you through the installation
+               process, including all dependancies.
+            <p>Open a terminal and paste in the command to begin installation.
+               <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>python <(curl -fsSkL kokompe.cba.mit.edu/install_mac.py)</code></pre>
+            <p>To interrupt the script at any point, press Control+C
+            <p><b>Note:</b> This script assumes that you don't have MacPorts or Fink installed,
+               and installs Homebrew to get dependancies.  If you do have MacPorts or Fink,
+               it's probably easier to install dependancies yourself and build from source.
+            <h4>Normal Installation</h4>
+            <p>
+            -->
+            You will need to install <a href="https://developer.apple.com/xcode/">XCode</a> or
+            <a href="https://developer.apple.com/downloads">Command Line Tools for XCode</a>, which requires
+            free registration as an Apple Developer.
+            
+            <p>With this installed, you will need the following packages:
+            <p>
+            <a href="http://www.wxpython.org/download.php#unstable">wxPython</a> (Python 2.7 Cocoa version required)<br>
+            <a href="http://www.boost.org/">Boost</a><br>
+            <a href="http://www.cmake.org/">cmake</a><br>
+            <a href="http://www.libpng.org/pub/png/libpng.html">libpng</a> (for OS X 10.7+)<br>
+            <a href="http://giflib.sourceforge.net/">GIFLIB</a><br>
+            
+            <p><a href="http://brew.sh">Homebrew</a> offers a convenient way to
+            install everything but wxPython.  With Homebrew installed, you can install these dependancies
+            with the command <code>brew install boost cmake libpng giflib</code>.
+            
+            <h3>Compiling</h3>
+            <p>
+            To compile, after downloading the source above, unzip <code>fab_src.zip</code> and <code>cd</code>
+            to the folder it's in.
+            <p>
+            Type <code>make fab</code>, which should compile all executables and copy scripts into <code>bin</code>.
+            <p>At this point, <code>make install</code> will copy all executables and scripts to <code>/usr/local/bin</code>.
+            <p>Alternatively, you can add the <code>bin</code> folder to your path.  To do this, add the line
+            <p><code>export PATH=fab/bin:$PATH</code>
+            <p>to <code>~/.bashrc</code>, with <code>fab/bin</code> replaced by the location of the <code>bin</code> directory.
+
+            <p>
+            <h3>Windows (Beta)</h3>
+            <p>
+            Since everything is built with <code>cmake</code>, it is possible to compile the
+            fab modules on Windows.  Using <a href="http://www.cygwin.com/">Cygwin</a> allows us
+            to build the command-line tools easily, but getting wxPython installed is more challenging.
+            
+            <p>
+            There's a native wxPython windows installer, but we couldn't figure out how to get it
+            talking to Cygwin.  We ended up compiling wxPython in Cygwin, which was a challenge.
+            
+            <p>
+            If you're interested in maintaining a Windows port, let us know.
+            </div>
+
+            <div id="footer">
+                Kokompe and the Fab Modules are developed by the <a href="http://cba.mit.edu">MIT
+                Center for Bits and Atoms</a> with the <a href="http://fab.cba.mit.edu">Fab
+                Network</a>.<p>
+            This work may be reproduced, modified, distributed, performed, and displayed for any purpose, but must
+            acknowledge the kokompe project. Copyright is retained and must be preserved. The work is provided as is;
+            no warranty is provided, and users accept all liability.
+            <p>This website was last updated in August 2012.
+            </div>
+    </div>
+</body>
+</html>

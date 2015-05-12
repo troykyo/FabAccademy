@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>The Machines that Make Project at the MIT Center for Bits and Atoms</title> 
+
+        <link href="http://mtm.cba.mit.edu/style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head> 
+    <body> 
+
+        <div class="header">
+            <h1>Machines that Make: Reconfigurable Stages</h1>
+        </div>
+        <div class="widebody">
+	
+	<p>
+	These reconfigurable stages represent one axis of motion each, which can be combined for form new machines.
+	</p>
+	
+	<p>
+	<img src="http://mtm.cba.mit.edu/machines/stages/img/stages2.gif">
+	</p>
+        
+	<p>
+        These modular stages allow users to explore different kinematic models easily. Different heads can be mounted to them, and they run on the <a href="http://pygestalt.org/">pyGestalt virtual machine network</a> so that they can easily take input from a variety of different software interfaces. The <a href="http://mtm.cba.mit.edu/machines/stages/doc/2013-12-03-stage-cutfile.dxf">files (version 1)</a> and <a href="http://mtm.cba.mit.edu/machines/stages/doc/2012-12-03-stages-bom.pdf">bill of materials (version 1)</a> are available. (See below for version 2.)
+        </p>
+	<p>
+	<img src="http://mtm.cba.mit.edu/machines/stages/img/index.jpg" width=800>
+The stages have hole mounting patterns premade to allow for rapid attachment in different configurations.
+	</p>
+	<p>
+<iframe src="http://pdl.vimeocdn.com/00032/487/214388927.mp4?token2=1430894677_f8e25532b7e2947091be2c3239bcb4af&aksessionid=a13e9082ac598e1e" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+Here we configured the stages to be a 4-axis hot wire cutter. In this short video, the wire cutter is cutting a Mark Drela airfoil.
+	</p>
+	<p>
+	<img src="http://mtm.cba.mit.edu/machines/stages/img/stage2-exploded.png" width=800>
+	The breakdown of these stages, you can download files <a href="http://mtm.cba.mit.edu/machines/stages/doc/Stage_022014.3dm">here</a>.
+	<p>
+	<img src="http://mtm.cba.mit.edu/machines/stages/img/board.jpg" width=800>
+	</p>
+
+	<p>
+	This board is a pyGestalt node with an onboard stepper motor driver to control each axis. You can find the schematics, board, code, and BOM <a href="https://github.com/imoyer/086-005">here</a>, and the gestalt library <a href="https://github.com/imoyer/gestalt">here</a>.
+
+	<p>
+	<img src="http://mtm.cba.mit.edu/machines/stages/img/daisychain.png" width=800>
+	</p>
+
+	<p>
+	Each node will represent its own axis, identified in your virtual machine. You can see an example virtual machine <a href="http://mtm.cba.mit.edu/machines/stages/docs/compoundNode.py">here</a>, or check out the <a href="https://github.com/imoyer/gestalt">pygestalt github</a>. You can build your own software interface to talk to the virtual machine, for example from a web browser, or perhaps streaming coordinates from a spreadsheet.
+	<p>
+	For the hot wire cutter, we exported machine coordinates from a virtual machine representation and imported them into a hot wire virtual machine. The code for that is in the examples section of the <a href="http://github.com/imoyer/gestalt">pygestalt github</a>. To demonstrate its full 4-axis capability we cut this very functional shape that says "HELL" on one side and "YEAH" on the other:
+	</p>
+	<p>	
+	<img src="http://mtm.cba.mit.edu/machines/stages/img/mmtm-hell-model.jpg" width=800>
+	<p>
+	<img src="http://mtm.cba.mit.edu/machines/stages/img/mmtm-hell.JPG" width=800>
+	<p>
+	<img src="http://mtm.cba.mit.edu/machines/stages/img/mmtm-yeah.JPG" width=800>
+	<p>
+	This work was started in collaboration with the MISIS university in Moscow and James Coleman, Ben Peters, Matt Hirsch, Ilan Moyer, and Nadya Peek in October 2013. 
+
+	<p>
+	<small>
+	last updated by Nadya Peek March 2014
+	</small>
+
+	</div>
+        <div class="footer">
+<a href="http://cba.mit.edu">MIT Center for Bits and Atoms</a> 2014
+<p>
+This work may be reproduced, modified, distributed, performed, and displayed for any purpose, but must acknowledge the Machines that make project. Copyright is retained and must be preserved. The work is provided as is; no warranty is provided, and users accept all liability. 
+        </div>
+
+    </body>

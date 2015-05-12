@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/DSPG Main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" --> 
+<title>RLE :: Digital Signal Processing Group</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --> <!-- InstanceEndEditable --> 
+<script language="JavaScript">
+<!--
+function doClock(){ // By Paul Davis - www.kaosweaver.com
+  var t=new Date(),a=doClock.arguments,str="",i,a1,lang="1";
+  var month=new Array('January','Jan', 'February','Feb', 'March','Mar', 'April','Apr', 'May','May', 'June','Jun', 'July','Jul', 'August','Aug', 'September','Sep', 'October','Oct', 'November','Nov', 'December','Dec');
+  var tday= new Array('Sunday','Sun','Monday','Mon', 'Tuesday','Tue', 'Wednesday','Wed','Thursday','Thr','Friday','Fri','Saturday','Sat');
+  for(i=0;i<a.length;i++) {a1=a[i].charAt(1);switch (a[i].charAt(0)) {
+  case "M":if  ((Number(a1)==3) && ((t.getMonth()+1)<10)) str+="0";
+  str+=(Number(a1)>1)?t.getMonth()+1:month[t.getMonth()*2+Number(a1)];break;
+  case "D": if ((Number(a1)==1) && (t.getDate()<10)) str+="0";str+=t.getDate();break;
+  case "Y": str+=(a1=='0')?t.getFullYear():t.getFullYear().toString().substring(2);break;
+  case "W":str+=tday[t.getDay()*2+Number(a1)];break; default: str+=unescape(a[i]);}}return str;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<link href="http://www.rle.mit.edu/dspg/dspg_style.css" rel="stylesheet" type="text/css">
+<style type="text/css"><!-- A:link {color:#4A5460; text-decoration: none} A:visited {color:#666666; text-decoration: none} A:hover {color:#94A9C1; text-decoration: underline} A:active {color:#666666} --> </style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('images/topnav_over_05.gif','images/topnav_over_07.gif','images/topnav_over_09.gif','images/topnav_over_11.gif','images/topnav_over_13.gif','images/sidenav_pub_roll_04.jpg','images/sidenav_pub_roll_08.jpg','images/sidenav_pub_roll_12.jpg','images/sidenav_pub_roll_16.jpg','images/sidenav_pub_roll_20.jpg','images/sidenav_pub_roll_24.jpg')">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr align="left" valign="top"> 
+    <td width="150" height="69" bgcolor="#94A9C1"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="150" height="69"></td>
+    <td width="201" height="69" bgcolor="#4A5460"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="201" height="69"></td>
+    <td height="69" align="right" valign="middle" bgcolor="#94A9C1"><a href="http://www.rle.mit.edu/dspg/default.htm"><img src="http://www.rle.mit.edu/dspg/images/siteheader.gif" alt="Digital Signal Processing Group :: Professor Alan V. Oppenheim" width="363" height="40" hspace="11" border="0"></a></td>
+  </tr>
+  <tr align="left" valign="top"> 
+    <td width="150" bgcolor="#000000"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="150" height="1"></td>
+    <td width="201" bgcolor="#000000"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="201" height="1"></td>
+    <td bgcolor="#000000"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="20" height="1"></td>
+  </tr>
+  <tr align="left" valign="top"> 
+    <td width="150" valign="middle" bgcolor="#666666"><a href="http://www.rle.mit.edu/dspg/internal/internal.html"><img src="http://www.rle.mit.edu/dspg/images/topnav_01.gif" alt="Internal Link" width="63" height="15" border="0"></a></td>
+    <td width="201" bgcolor="#333333"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="201" height="15"></td>
+    <td align="right" bgcolor="#666666"> <!-- #BeginLibraryItem "/Library/TopNav.lbi" --><table width="409" border="0" cellspacing="0" cellpadding="0">
+        <tr align="left" valign="top"> 
+          <td width="39"><img src="http://www.rle.mit.edu/dspg/images/topnav_04.gif" alt="" width="39" height="15"></td>
+          
+    <td width="56"><a href="http://www.rle.mit.edu/dspg/about_overview.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('About','','images/topnav_over_05.gif',1)"><img src="http://www.rle.mit.edu/dspg/images/topnav_05.gif" alt="Link: About DSPG" name="About" width="56" height="15" border="0"></a></td>
+          <td width="12"><img src="http://www.rle.mit.edu/dspg/images/topnav_06.gif" alt="" width="12" height="15"></td>
+          <td width="45"><a href="http://www.rle.mit.edu/dspg/research.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Research','','images/topnav_over_07.gif',1)"><img src="http://www.rle.mit.edu/dspg/images/topnav_07.gif" alt="Link: Research" name="Research" width="45" height="15" border="0"></a></td>
+          <td width="12"><img src="http://www.rle.mit.edu/dspg/images/topnav_08.gif" alt="" width="12" height="15"></td>
+          <td width="33"><a href="http://www.rle.mit.edu/dspg/people_faculty.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('People','','images/topnav_over_09.gif',1)"><img src="http://www.rle.mit.edu/dspg/images/topnav_09.gif" alt="Link: People" name="People" width="33" height="15" border="0"></a></td>
+          <td width="12"><img src="http://www.rle.mit.edu/dspg/images/topnav_10.gif" alt="" width="12" height="15"></td>
+          <td width="64"><a href="pub_books.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Publications','','images/topnav_over_11.gif',1)"><img src="http://www.rle.mit.edu/dspg/images/topnav_11.gif" alt="Link: Publications" name="Publications" width="64" height="15" border="0"></a></td>
+          <td width="12"><img src="http://www.rle.mit.edu/dspg/images/topnav_12.gif" alt="" width="12" height="15"></td>
+          <td width="112"><a href="http://www.rle.mit.edu/dspg/partners.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Partners','','images/topnav_over_13.gif',1)"><img src="http://www.rle.mit.edu/dspg/images/topnav_13.gif" alt="Link: Partners & Affiliations" name="Partners" width="112" height="15" border="0"></a></td>
+          <td width="12"><img src="http://www.rle.mit.edu/dspg/images/topnav_14.gif" alt="" width="12" height="15"></td>
+        </tr>
+      </table><!-- #EndLibraryItem --></td>
+  </tr>
+  <tr align="left" valign="top"> 
+    <td bgcolor="#000000"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="150" height="1"></td>
+    <td width="201" bgcolor="#000000"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="201" height="1"></td>
+    <td bgcolor="#000000"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="20" height="1"></td>
+  </tr>
+  <tr align="left" valign="top"> 
+    <td width="150" bgcolor="#666666"><!-- InstanceBeginEditable name="SidePhoto" --><img src="http://www.rle.mit.edu/dspg/images/sidenavphoto_pub.jpg" alt="Professor Alan V. Oppenheim" width="150" height="264"><!-- InstanceEndEditable --></td>
+    <td width="201" bgcolor="#4A5460"><!-- InstanceBeginEditable name="SecondaryNavigation" --> 
+      <!-- #BeginLibraryItem "/Library/SideNav Publications.lbi" -->
+<script language="JavaScript" type="text/JavaScript"><!--function MM_swapImgRestore() { //v3.0  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;}function MM_preloadImages() { //v3.0  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}}function MM_findObj(n, d) { //v4.01  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);  if(!x && d.getElementById) x=d.getElementById(n); return x;}function MM_swapImage() { //v3.0  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}}//--></script><TABLE WIDTH=201 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+  <TR> 
+    <TD> <IMG SRC="http://www.rle.mit.edu/dspg/images/sidenav_pub_02.jpg" WIDTH=201 HEIGHT=70 ALT=""></TD>
+  </TR>
+  <TR> 
+    <TD> <a href="pub_books.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Books','','images/sidenav_pub_roll_04.jpg',1)"><img src="http://www.rle.mit.edu/dspg/images/sidenav_pub_04.jpg" alt="Books" name="Books" width="201" height="11" border="0"></a></TD>
+  </TR>
+  <TR> 
+    <TD> <IMG SRC="http://www.rle.mit.edu/dspg/images/sidenav_pub_06.jpg" WIDTH=201 HEIGHT=7 ALT=""></TD>
+  </TR>
+  <TR> 
+    <TD> <a href="http://www.rle.mit.edu/dspg/pub_bookchapters.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Book Chapters','','images/sidenav_pub_roll_08.jpg',1)"><img src="http://www.rle.mit.edu/dspg/images/sidenav_pub_08.jpg" alt="Book Chapters" name="Book Chapters" width="201" height="13" border="0"></a></TD>
+  </TR>
+  <TR> 
+    <TD> <IMG SRC="http://www.rle.mit.edu/dspg/images/sidenav_pub_10.jpg" WIDTH=201 HEIGHT=8 ALT=""></TD>
+  </TR>
+  <TR> 
+    <TD> <a href="http://www.rle.mit.edu/dspg/pub_conference.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Conference','','images/sidenav_pub_roll_12.jpg',1)"><img src="http://www.rle.mit.edu/dspg/images/sidenav_pub_12.jpg" alt="Conference Proceedings" name="Conference" width="201" height="12" border="0"></a></TD>
+  </TR>
+  <TR> 
+    <TD> <IMG SRC="http://www.rle.mit.edu/dspg/images/sidenav_pub_14.jpg" WIDTH=201 HEIGHT=9 ALT=""></TD>
+  </TR>
+  <TR> 
+    <TD> <a href="http://www.rle.mit.edu/dspg/pub_journal.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Journal','','images/sidenav_pub_roll_16.jpg',1)"><img src="http://www.rle.mit.edu/dspg/images/sidenav_pub_16.jpg" alt="Journal Articles" name="Journal" width="201" height="12" border="0"></a></TD>
+  </TR>
+  <TR> 
+    <TD> <IMG SRC="http://www.rle.mit.edu/dspg/images/sidenav_pub_18.jpg" WIDTH=201 HEIGHT=7 ALT=""></TD>
+  </TR>
+  <TR> 
+    <TD> <a href="http://www.rle.mit.edu/dspg/pub_patents.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Patents','','images/sidenav_pub_roll_20.jpg',1)"><img src="http://www.rle.mit.edu/dspg/images/sidenav_pub_20.jpg" alt="Patents" name="Patents" width="201" height="12" border="0"></a></TD>
+  </TR>
+  <TR> 
+    <TD> <IMG SRC="http://www.rle.mit.edu/dspg/images/sidenav_pub_22.jpg" WIDTH=201 HEIGHT=8 ALT=""></TD>
+  </TR>
+  <TR> 
+    <TD> <a href="http://www.rle.mit.edu/dspg/pub_theses.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Theses','','images/sidenav_pub_roll_24.jpg',1)"><img src="http://www.rle.mit.edu/dspg/images/sidenav_pub_24.jpg" alt="Theses & Technical Reports" name="Theses" width="201" height="12" border="0"></a></TD>
+  </TR>
+  <TR> 
+    <TD> <IMG SRC="http://www.rle.mit.edu/dspg/images/sidenav_pub_26.jpg" WIDTH=201 HEIGHT=83 ALT=""></TD>
+  </TR>
+</TABLE>
+<!-- #EndLibraryItem --><!-- InstanceEndEditable --></td>
+    <td bgcolor="#333333"><table width="100%" border="0" cellpadding="12" cellspacing="0" bgcolor="#FFFFFF">
+        <tr> 
+          <td align="left" valign="top"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" width="1" height="1"></td>
+        </tr>
+        <tr> 
+          <td align="left" valign="top"><!-- InstanceBeginEditable name="PageHeader" --><img src="http://www.rle.mit.edu/dspg/images/pageheader_pub_books.gif" alt="Publications &gt; Books" width="394" height="16"><!-- InstanceEndEditable --></td>
+        </tr>
+        <tr> 
+          <td align="left" valign="top" class="bodycopy"><!-- InstanceBeginEditable name="MainContent" --> 
+            <p class="bodycopyitalic" style="margin-bottom: 0">&nbsp;</p>
+            <p style="margin-top: 0;"><strong>Books authored 
+              or edited by current and former members of DSPG</strong></p>
+            <p>A. V. Oppenheim and T. A. Baran, 6.341x Discrete-Time Signal Processing, on edX, Spring 2015. <a href="https://www.edx.org/course/mitx/mitx-6-341x-discrete-time-signal-4396">https://www.edx.org/course/mitx/mitx-6-341x-discrete-time-signal-4396</a></p>
+            <p style="margin-bottom: 0;">A. V. Oppenheim and G. Verghese, 6.011 Introduction to Communication, Control, and Signal Processing, Spring 2010. (Massachusetts Institute of Technology: MIT OpenCourseWare), http://ocw.mit.edu. License: Creative Commons BY-NC-SA.</p>
+            <p style="margin-top: 0;"><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-011-introduction-to-communication-control-and-signal-processing-spring-2010/">http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-011-introduction-to-communication-control-and-signal-processing-spring-2010/</a></p>
+            <p>A. V. Oppenheim and R.W. Schafer, <em><a href="http://www.pearsonhighered.com/product?ISBN=0131988425">Discrete-Time Signal Processing</a></em>, Third Edition. Upper Saddle River, NJ: Prentice-Hall, Inc., 2010.</p>
+<p>T. Quatieri, <em>Discrete-Time 
+              Speech Signal Processing: Principles and Practice. </em>Upper Saddle River, NJ: Prentice-Hall, Inc., 2002 .</p>
+<p>R. Picard, <span class="bodycopyitalic">Affective 
+              Computing</span>. Cambridge, MA: MIT Press, 2000.</p>
+            <p>A. V. Oppenheim and R.W. 
+              Schafer, with J. R. Buck, <span class="bodycopyitalic">Discrete-Time 
+              Signal Processing, Second Edition.</span> Upper Saddle River, NJ: Prentice-Hall, Inc., 1999. </p>
+            <p>H. V. Poor and G. W. Wornell, 
+              eds., <span class="bodycopyitalic">Wireless Communications: Signal 
+              Processing Perspectives.</span> Upper Saddle River, NJ: Prentice-Hall, Inc., 1998.</p>
+<p>J. H. McClellan, C. S. Burrus, A. V. Oppenheim, T. W. Parks, R. W. Schafer, and H. W. Schuessler, <span class="bodycopyitalic"> Computer-Based Exercises for Signal Processing Using MATLAB 5.</span> Upper Saddle River, NJ: Prentice-Hall, Inc., 1998.</p>
+<p>J. H. McClellan, R. W. 
+              Schafer, and M. A. Yoder, <span class="bodycopyitalic">DSP First: 
+              A Multimedia Approach.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 1997.</p>
+            <p>A. V. Oppenheim and A. 
+              S. Willsky, with S. H. Nawab, <span class="bodycopyitalic">Signals 
+              And Systems, Second Edition.</span> Upper Saddle River, NJ: Prentice-Hall, Inc., 1997. </p>
+            <p>J. Buck, M. Daniel, and A. Singer, <span class="bodycopyitalic">Computer Explorations in Signals and Systems Using Matlab.</span> Upper Saddle River, NJ: Prentice-Hall, Inc., 1996.</p>
+            <p>G. W. Wornell, <span class="bodycopyitalic">Signal 
+              Processing with Fractals: A Wavelet-Based Approach.</span> Upper Saddle River, NJ: Prentice-Hall, Inc., 1996. </p>
+            <p>D. E. Dudgeon, R. M. Mersereau, 
+              and R. M. Merser, <span class="bodycopyitalic">Multidimensional 
+              Digital Signal Processing.</span> Upper Saddle River, NJ: Prentice-Hall, Inc., 1995. </p>
+            <p>C. S. Burrus, J. H. McClellan, 
+              A. V. Oppenheim, T. W. Parks, R. W. Schafer, and H. W. Schuessler, <span class="bodycopyitalic">Computer-Based 
+              Exercises for Signal Processing.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 1994. </p>
+            <p>D. H. Johnson and D. E. 
+              Dudgeon, <span class="bodycopyitalic">Array Signal Processing: Concepts 
+              and Techniques.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 
+              1993.</p>
+            <p>S. Hein and A. Zakhor, 
+              <span class="bodycopyitalic">Sigma Delta Modulators: Nonlinear Decoding 
+              Algorithms and Stability Analysis.</span> Kluwer Academic, 1993.</p>
+            <p>A. V. Oppenheim and S. H. 
+              Nawab, Eds., <span class="bodycopyitalic">Symbolic and Knowledge-Based 
+              Signal Processing.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 1992. </p>
+            <p>J. S. Lim, <span class="bodycopyitalic">Two-Dimensional 
+              Signal and Image Processing.</span> Pearson Higher Education, 1990.</p>
+            <p>A. V. Oppenheim and R. W. 
+              Schafer, <span class="bodycopyitalic">Discrete-Time Signal Processing.</span> 
+              Englewood Cliffs, NJ: Prentice-Hall, Inc., 1989. </p>
+            <p>J. S. Lim and A. V. Oppenheim, 
+              eds., <span class="bodycopyitalic">Advanced Topics in Signal Processing.</span> 
+              Englewood Cliffs, NJ: Prentice-Hall, Inc., 1988. </p>
+            <p>J. S. Lim, Ed., <span class="bodycopyitalic">Speech 
+              Enhancement.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 1983.</p>
+            <p>R. E. Crochiere and L. R. 
+              Rabiner, <span class="bodycopyitalic">Multirate Digital Signal Processing.</span> 
+              Englewood Cliffs, NJ: Prentice-Hall, Inc., 1983.</p>
+            <p>A. V. Oppenheim and A. S. 
+              Willsky, with I. T. Young, <span class="bodycopyitalic">Signals and Systems.</span> 
+              Englewood Cliffs, NJ: Prentice-Hall, Inc., 1983. </p>
+            <p>J. H. McClellan and C. 
+              M. Rader, <span class="bodycopyitalic">Number Theory in Digital 
+              Signal Processing.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 1979.</p>
+            <p>J. M. Tribolet, <span class="bodycopyitalic">Seismic 
+              Applications of Homomorphic Signal Processing.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 1979.</p>
+            <p>L. R. Rabiner and R. W. 
+              Schafer, <span class="bodycopyitalic">Digital Processing of Speech 
+              Signals.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 1978.</p>
+            <p>A. V. Oppenheim, Ed., <span class="bodycopyitalic">Applications 
+              of Digital Signal Processing.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 1978. </p>
+            <p>L. R. Rabiner and B. Gold, 
+              <span class="bodycopyitalic">Theory and Application of Digital Signal 
+              Processing.</span> Englewood Cliffs, NJ: Prentice-Hall, Inc., 1975.</p>
+            <p>A. V. Oppenheim and R. W. 
+              Schafer, <span class="bodycopyitalic">Digital Signal Processing.</span> 
+              Englewood Cliffs, NJ: Prentice-Hall, Inc., 1975. </p>
+            <p>B. Gold and C. M. Rader, 
+              <span class="bodycopyitalic">Digital Processing of Signals.</span> 
+              New York: McGraw-Hill Book Company, 1969.</p>
+            <p>A. V. Oppenheim, Ed., <span class="bodycopyitalic">Papers 
+              on Digital Signal Processing.</span> Cambridge, MA: MIT Press, 1969. 
+            </p>
+            <p>R. Alter and A. V. Oppenheim, <span class="bodycopyitalic">Teacher's 
+              Guide to Introductory Network Theory.</span> Harper and Row, 1965.</p>
+          <!-- InstanceEndEditable --></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr align="left" valign="top"> 
+    <td width="150" bgcolor="#000000"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="150" height="1"></td>
+    <td width="201" bgcolor="#000000"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="201" height="1"></td>
+    <td bgcolor="#000000"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="20" height="1"></td>
+  </tr>
+  <tr align="left" valign="top"> 
+    <td width="150" bgcolor="#94A9C1"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="150" height="69"></td>
+    <td width="201" bgcolor="#4A5460"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="201" height="69"></td>
+    <td bgcolor="#94A9C1"><img src="http://www.rle.mit.edu/dspg/images/pixel.gif" alt="" width="20" height="69"></td>
+  </tr>
+</table>
+<!-- #BeginLibraryItem "/Library/BottomNav.lbi" --><table width="100%" border="0" cellspacing="0" cellpadding="12">
+  <tr> 
+    <td align="left" valign="top" class="bodycopy"><a href="http://www.rle.mit.edu/dspg/default.htm">Home</a> 
+      / <a href="http://www.rle.mit.edu/dspg/about_overview.html">About DSPG</a> / <a href="http://www.rle.mit.edu/dspg/research.html">Research</a> 
+      / <a href="http://www.rle.mit.edu/dspg/people_faculty.html">People</a> / <a href="pub_books.html">Publications</a> 
+      / <a href="http://www.rle.mit.edu/dspg/partners.html">Partners &amp; Affiliations</a></td>
+    <td align="right" valign="top" class="bodycopy">&copy; 
+      <script language="JavaScript">   document.write(doClock("Y0"));</script>
+      Massachusetts Institute of Technology</td>
+  </tr>
+  <tr> 
+    <td align="left" valign="middle"><a href="http://www.rle.mit.edu"><img src="http://www.rle.mit.edu/dspg/images/rle_logo.gif" alt="Link: Research Laboratory of Electronics at MIT" width="179" height="41" border="0"></a></td>
+    <td align="right" valign="middle"><a href="http://www.eecs.mit.edu"><img src="http://www.rle.mit.edu/dspg/images/eecs_logo.gif" alt="Link: Department of Electrical Engineering and Computer Science" width="64" height="30" border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://web.mit.edu"><img src="http://www.rle.mit.edu/dspg/images/mit_logo_color.gif" alt="Link: Massachusetts Institute of Technology" width="58" height="32" border="0"></a></td>
+  </tr>
+</table><!-- #EndLibraryItem -->
+</body>
+<!-- InstanceEnd --></html>

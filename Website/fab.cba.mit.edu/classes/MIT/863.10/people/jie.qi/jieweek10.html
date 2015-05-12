@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Jie Qi - How to Make (Almost) Anything</title>
+<link href="http://fab.cba.mit.edu/classes/MIT/863.10/people/jie.qi/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<table width="700" border="0" align="center" cellpadding="80" cellspacing="0">
+	<td width="700" valign="top" class="content">
+	<h1>Week 7: Flapping origami crane</h1>
+	<p>For output devices, I decided to experiment with using shape memory alloy to actuate paper.  My goal was to create an origami crane that would become flapping when someone picked it up.  I used flexinol wire, from <a href = "http://www.dynalloy.com">dynalloy.com, which is a wire that contracts when heated up.</a></p>
+	
+	<p><b>Experiments</b></p>
+	<p>I started by examining the sample mechanism from dynalloy, which attaches the wire to a springy plastic so that when the wire contracts, the plastic curves.  The flexinol is actuated by running current through, connect one end to VCC and the other end to ground, which causes the wire to heat up.  I planned to use this sort of motion to make the flapping of the crane's wings. </p>
+	<p><CENTER><img border="0" src="http://fab.cba.mit.edu/classes/MIT/863.10/people/jie.qi/10_mech.jpg" width="300" height="255">   <img border="0" src="http://fab.cba.mit.edu/classes/MIT/863.10/people/jie.qi/10_wing_mech.jpg" width="300" height="255"></CENTER></p>
+	<p>Next I prototyped the MOSFET circuit so I will be able to activate the flexinol digitally.</p>
+	<p><CENTER><img border="0" src="http://fab.cba.mit.edu/classes/MIT/863.10/people/jie.qi/10_sketch.jpg" width="600" height="450"></CENTER></p>
+	<p><CENTER><img border="0" src="http://fab.cba.mit.edu/classes/MIT/863.10/people/jie.qi/10_diagram.jpg" width="391" height="255"></CENTER></p>
+	<p>And finally made the circuit.  I used wax paper because anything siffer was too rigid for the 0.006" Flexinol to overcome.  My original design was to use a small 37V 150mAH lithium ion battery which fits inside the body of the crane, but it ended up being too weak so I switched to a larger external battery.   In future designs, I plan on using stronger flexinol with a smaller battery so that the entire circuit can be safely enclosed within the body of the crane</p>
+	<p><CENTER><img border="0" src="http://fab.cba.mit.edu/classes/MIT/863.10/people/jie.qi/10_circuit.jpg" width="600" height="450"></CENTER></p>
+	<p><CENTER><img border="0" src="http://fab.cba.mit.edu/classes/MIT/863.10/people/jie.qi/10_full_circuit.jpg" width="600" height="450"></CENTER></p>
+	<p><CENTER><img border="0" src="http://fab.cba.mit.edu/classes/MIT/863.10/people/jie.qi/10_complete.jpg" width="600" height="450"></CENTER></p>
+	<p><CENTER><iframe src="http://av.vimeo.com/28733/870/33325954.mp4?token2=1430894624_2ae5a95ad685de04531352ed169ad65f&aksessionid=6245cf4dc4751204" width="600" height="450" frameborder="0"></iframe></CENTER></p>
+	
+<br>
+<br>
+	<a href="http://fab.cba.mit.edu/classes/MIT/863.10/people/jie.qi/index.html">Back to index</a> 
+</td></table>
+</body>
+</html>

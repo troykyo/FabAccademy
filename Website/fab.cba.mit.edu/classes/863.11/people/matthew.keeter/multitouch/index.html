@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<title>Capacitive Multitouch</title>
+<link rel="stylesheet" type="text/css" href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/style.css" media="screen" />
+</head>
+
+<body>
+
+<div id="header">
+<h1>Matt Keeter // <a href="http://fab.cba.mit.edu/classes/863.11/">HTM(a)A</a> // Capacitive Multitouch</h1>
+</div>
+
+<!-- Begin sidebar -->
+<div id="sidebar">
+    <ul>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/pressfit/index.html">Press-fit quadrotor</a></li>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/fabisp/index.html">FabISP</a></li>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/surfnode/index.html">Propellor nodes</a></li>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/chair/index.html">OSB Chair</a></li>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/bonsai/index.html">Bonsai mountains</a></li>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/slideclock/index.html">slideclock</a></li>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/scanprint/index.html">3D scanning & printing</a></li>
+        <li><a class="current" href="index.html">Capacitive multitouch</a></li>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/esc/index.html">Electronic speed controller</a></li>
+        <li><a class="current" href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/synth/index.html">multitouch synth</a></li>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/MTM/index.html">MTM snap Z stage</a></li>
+        <li><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/fab_boombox/index.html">Final project:<br>Fab boombox</a></li>
+    </ul>
+</div>
+<!-- End sidebar -->
+
+<div id="content">
+<h2>Demo</h2>
+<p><iframe src="http://av.vimeo.com/71759/324/72552316.mp4?token2=1430894614_9e9bafded7fed09522d1f8096b989c68&aksessionid=4c3acc2a79077979" width="640" height="480" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe></p>
+
+<h2>Design</h2>
+<p>For this week's assignment, I made a 4x4 capacitive multitouch grid.  Designs like the
+<a href="../../../../MIT/863.10/people/matt.blackshaw/week8.html">$4 touchpad</a>
+are limited to a single touch - with multiple touches, it is impossible to tell which row is
+associated with which column (unless you do sneaky things with mutual capacitance, which is a
+whole 'nother barrel of fish).</p>
+<p>The board works using the "charge a pad through a large resistor" strategy.  The charging
+profile of the pad relates to an RC time constant - since R is large, small changes in C can be
+detected.</p>
+
+<h2>Schematic</h2>
+<p>As it turns out, capacitive grids are tricky, because capacitance tends to leak wherever it
+can.  The grid is designed so that columns share an input and rows share an output.  I used diodes
+to isolate each pad from the neighbors on the same output row.</p><p>In the interest of board space,
+I didn't isolate each pad from the inputs.  This meant that I could measure charging behavior in
+isolation, but discharge behavior is contaminated.</p>
+<p><img src="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/schematic_grid.png"></p>
+<p>I used an Attiny44 to control and communicate with the grid.  It also sends data back to
+the user's computer through an FTDI serial link.  The total cost in parts ended up around $5.60</p>
+<p><img src="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/schematic_uc.png"></p>
+
+<h2>Layout</h2>
+<p>As you can imagine, wiring the traces required patience and sneakiness.  I used a bunch of 0 Ohm
+jumpers to leap over traces when necessary, but the routing ended up pretty neat (and often
+symmetric).</p>
+<p><img src="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/layout.png"></p>
+<p>The sensing pads are on the opposite side of the board as the components.  I used a a Makefile
+and Python script to export the via image then stitch it into the board cutout outline, so the
+vias were all cut out at the same time as the board.  Since the board is symmetric, I could simply
+flip it over into the original cavity to mill the sensing pads.  Registration didn't need to be
+very precise since the pads are large.</p>
+
+<h2>Population</h2>
+<p>The only interesting part about populating the board was the vias: I electrically connected the
+vias by carefully threading solid wire through the holes, folding it at a right angle on one side,
+then soldering.  If you don't fold it at a right angle, it has an unfortunate tendancy to fall out.
+<p><img src="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/components.jpg"></p>
+<p><img src="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/pads.jpg"></p>
+<p><img src="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/through.jpg"></p>
+
+<h2>Firmware</h2>
+<p>I used the ADC to measure pad voltage one micro-second after setting the sending pin high.  Due
+to the ADC's sampling time, I couldn't measure an entire column in parallel; instead, the code
+samples each of the 16 pins individually.  It sends data back as a stream of 16 characters (only
+the top 8 bits of the ADC result are used) with a newline in between readings.</p>
+<p>There's some interesting pin driver twiddling - I exploit the difference between input
+(high impedance) and output (low impedance) to manipulate how the circuit charges and discharges.</p>
+
+<h2>Software</h2>
+<p>I wrote a quick sketch in Processing to display the pad states.  At first, I had trouble with
+the serial library, as it kept complaining about RXTX version mismatches.  The advice
+<a href="https://forum.processing.org/topic/rxtx-version-mismatch-on-mac-osx-10-6-8#25080000001161031">
+here</a> helped resolve the issue.</p>
+<p><img src="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/viz.png"></p>
+
+<h2>Source</h2>
+<p><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/multitouch_board.zip">Board</a></p>
+<p><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/multitouch_code.zip">Firmware</a></p>
+<p><a href="http://fab.cba.mit.edu/classes/863.11/people/matthew.keeter/multitouch/multitouch_viz.zip">Visualization</a></p>
+<p>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" />
+</a><br />All source files are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</a>.</p>
+</div>
+
+
+</body>
+</html>
